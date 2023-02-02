@@ -1,0 +1,50 @@
+@font-face {
+    font-family: myFont;
+    src: url("Assets/MuseoModerno-VariableFont_wght.ttf");
+}
+
+body {
+    color: #FEFEFE;
+    font-family: "myFont";
+}
+
+.menu ul{
+    text-align: right;
+}
+
+.menu a {
+    color: #A2A2A4;
+    text-decoration: none; /* elimina elementi decorativi dei link presenti di default */
+    position: relative;
+    transition: all .3s ease; /* transizione cambio colore onHover */
+}
+
+.menu a::after { /* crea strisce invisibili sotto link */
+    Content: "";
+    position: absolute;
+    background-color: #ff3c78;
+    height: 3px;
+    width: 100%;
+    left: 0;
+    bottom: -10px;
+    opacity: 0;
+    transition: .3s ease;
+    pointer-events: none /* evita bug che rende la striscia cliccabile */
+}
+
+.menu a:hover::after { /* rende visibile striscia sotto link onHover */
+    opacity: 100%;
+}
+
+.menu a:hover {
+    color: #FEFEFE;
+}
+
+.menu li {
+    display: inline-block; /* allinea orizzontalmente i link della navbar */
+    padding: 0 20px; /* padding a destra di ogni link della navbar */
+}
+
+/* .menu a:active {
+    color: red;
+} */
