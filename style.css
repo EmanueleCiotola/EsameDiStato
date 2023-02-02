@@ -26,6 +26,7 @@ body {
     cursor: pointer;
     user-select: none;
     font-size: 1.5vmax;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .menu a::after { /* crea strisce invisibili sotto link */
