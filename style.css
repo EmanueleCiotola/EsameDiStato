@@ -16,6 +16,7 @@ body {
 
 
 
+
 /* Stile Scrollbar */
 /* Modifica scrollbar su Firefox */
 * {
@@ -66,7 +67,7 @@ body {
     -moz-user-select: none; /* firefox specific */
     -webkit-user-select: none; /* Chrome, Opera and Safari*/
     -ms-user-select: none; /* IE, ms-edge */
-    font-size: calc(10px + 1vw);
+    font-size: calc(10px + 0.8vw);
 }
 
 .menu a::after { /* crea strisce invisibili sotto link */
@@ -106,3 +107,20 @@ body {
     pointer-events: none;
 }
 /* Fine Stile Navbar */
+
+.citazioneHomePage {
+    font-size: calc(10px + 0.8vw); font-weight: lighter; background-color: rgb(162, 162, 164, 0.95); position: absolute; border-radius: 20px; padding: 0.3em 0.8em 0.3em 0.8em;
+}
+
+/* Prima Parte Homepage */
+@media (min-width: 0px) { /* layout citazione in piccoli devices (tablets, 768px e superiori) */
+    .citazioneHomePage{
+        margin-top: 5vh;
+    }
+}
+
+@media (min-width: 768px) { /* layout citazione in devices medi (layout citazione su desktop, 992px e superiori) */
+    .citazioneHomePage{
+        bottom: calc(20px + 3vh);
+    }
+}
