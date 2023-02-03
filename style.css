@@ -54,7 +54,7 @@ body {
 
 .menu li {
     display: inline-block; /* allinea orizzontalmente i link della navbar */
-    padding-left: 20px; /* padding a sinistra di ogni link della navbar */
+    padding-left: calc(15px + 1vw); /* padding a sinistra di ogni link della navbar */
 }
 
 .menu a {
