@@ -44,6 +44,7 @@ body {
 /* Stile Navbar */
 .menu {
     padding: 10px 0 15px 0;
+    margin-right: 20px;
 }
 
 .menu ul {
@@ -52,7 +53,7 @@ body {
 
 .menu li {
     display: inline-block; /* allinea orizzontalmente i link della navbar */
-    padding: 0 0 0 20px; /* padding a destra di ogni link della navbar */
+    padding-left: 20px; /* padding a sinistra di ogni link della navbar */
 }
 
 .menu a {
@@ -65,7 +66,7 @@ body {
     -moz-user-select: none; /* firefox specific */
     -webkit-user-select: none; /* Chrome, Opera and Safari*/
     -ms-user-select: none; /* IE, ms-edge */
-    font-size: calc(10px + 1vw);;
+    font-size: calc(10px + 1vw);
 }
 
 .menu a::after { /* crea strisce invisibili sotto link */
