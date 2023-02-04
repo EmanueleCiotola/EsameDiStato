@@ -131,7 +131,7 @@ body {
 @media (min-width: 768px) { /* layout citazione in devices medi (layout citazione su desktop, 992px e superiori in larghezza e meno di 400px in altezza) */
     @media (min-height: 0px) {
         .citazioneHomePage{
-            bottom: calc(5px + 2vh);
+            bottom: calc(5px + 1vh);
         }
     }
     @media (min-height: 400px) { /* layout citazione in devices medi (layout citazione su desktop, 992px e superiori in larghezza e più 400px in altezza) */
