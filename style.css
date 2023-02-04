@@ -110,6 +110,9 @@ body {
 }
 /* Fine Stile Navbar */
 
+
+
+/* Prima Parte Homepage */
 .citazioneHomePage {
     font-size: calc(10px + 0.8vw);
     font-weight: lighter;
@@ -119,17 +122,16 @@ body {
     padding: 0.5em 1em 0.5em 1em;
 }
 
-/* Prima Parte Homepage */
 @media (min-width: 0px) { /* layout citazione in piccoli devices (tablets, 768px e superiori) */
     .citazioneHomePage{
-        margin-top: 5vh;
+        margin-top: 7vh;
     }
 }
 
 @media (min-width: 768px) { /* layout citazione in devices medi (layout citazione su desktop, 992px e superiori in larghezza e meno di 400px in altezza) */
     @media (min-height: 0px) {
         .citazioneHomePage{
-            bottom: calc(5px + 3vh);
+            bottom: calc(5px + 2vh);
         }
     }
     @media (min-height: 400px) { /* layout citazione in devices medi (layout citazione su desktop, 992px e superiori in larghezza e più 400px in altezza) */
@@ -138,3 +140,4 @@ body {
         }
     }
 }
+/* Fine Prima Parte Homepage */
