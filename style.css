@@ -74,6 +74,7 @@ body {
     Content: "";
     position: absolute;
     background-color: #d52d08;
+    border-radius: 20px;
     height: 3px;
     width: 100%;
     left: 0;
@@ -99,6 +100,7 @@ body {
     Content: "";
     position: absolute;
     background-color: #d52d08;
+    border-radius: 20px;
     height: 3px;
     width: 100%;
     left: 0;
@@ -111,7 +113,7 @@ body {
 .citazioneHomePage {
     font-size: calc(10px + 0.8vw);
     font-weight: lighter;
-    background-color: rgb(162, 162, 164, 0.95);
+    background-color: rgb(32, 34, 37, 0.95); /* Colore con trasparenza del 95% */
     position: absolute;
     border-radius: 20px;
     padding: 0.5em 1em 0.5em 1em;
@@ -124,8 +126,15 @@ body {
     }
 }
 
-@media (min-width: 768px) { /* layout citazione in devices medi (layout citazione su desktop, 992px e superiori) */
-    .citazioneHomePage{
-        bottom: calc(20px + 3vh);
+@media (min-width: 768px) { /* layout citazione in devices medi (layout citazione su desktop, 992px e superiori in larghezza e meno di 400px in altezza) */
+    @media (min-height: 0px) {
+        .citazioneHomePage{
+            bottom: calc(5px + 3vh);
+        }
+    }
+    @media (min-height: 400px) { /* layout citazione in devices medi (layout citazione su desktop, 992px e superiori in larghezza e più 400px in altezza) */
+        .citazioneHomePage{
+            bottom: calc(20px + 3vh);
+        }
     }
 }
