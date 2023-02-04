@@ -44,6 +44,7 @@ body {
 .menu {
     padding: 10px 0 15px 0;
     margin-right: 20px;
+    background-color: red;
 }
 
 .menu ul {
