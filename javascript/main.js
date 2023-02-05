@@ -26,16 +26,15 @@ window.addEventListener("scroll", function(){
     }
 })
 
-function Funzione(daAttivare) {
+function goTo(daAttivare) { // attiva il link cliccato della navbar e scrolla fino al div corrispondente
     const link = document.querySelector("nav a.active");
     link.classList.remove("active");
     document.getElementById(daAttivare).classList.add("active");
-
-    console.log(daAttivare + "_Page");
+    
     const targetDiv = document.getElementById(daAttivare + "_Page");
-    console.log(targetDiv);
-    // Porta l'utente al div usando window.scrollTo
     window.scrollTo({
         top: targetDiv.offsetTop,
     });
 }
+//TODO quando scorre verso l'alto la navbar resta ferma e quando scorre verso il basso sparisce. Deve restare ferma sempre
+//TODO su mobile la navbar fa casino con gli hover
