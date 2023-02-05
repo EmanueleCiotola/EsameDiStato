@@ -85,6 +85,7 @@ nav a.active {
     color: #FEFEFE;
 }
 
+@media (hover: hover) {
 nav a:hover::after,
 nav a.active::before { /* rende visibile striscia sotto link onHover */
     Content: "";
@@ -97,7 +98,7 @@ nav a.active::before { /* rende visibile striscia sotto link onHover */
     bottom: -5px;
     transition: .3s ease;
     pointer-events: none; /* evita bug che rende la striscia cliccabile */
-}
+}}
 /* Fine Stile Navbar */
 
 
