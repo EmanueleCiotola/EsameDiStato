@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Home</title>
+</head>
+<body>
+    <div class="schermataPrincipale">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <nav id="menu">
+            <ul>
+                <li><a id="home" class="active" onclick="Funzione(id)">Home</a></li><!--
+                --><li><a id="educazione_civica" onclick="Funzione(id)">Educazione Civica</a></li><!--
+                --><li><a id="materie"  onclick="Funzione(id)">Materie</a>
+                </li>
+            </ul>
+        </nav>
+        <script src="javascript/main.js"></script>
+        <div id="home_Page" style="height: 100vh; display: flex; flex-flow: column;">
+            <div style="flex-grow: 1; background-image: url(Assets/images/GraffitoViaDellaPace.svg); background-position: bottom right; background-repeat: no-repeat; padding-left: 20px; margin-top: calc(45px + 1vw);">
+                <p style="font-size: calc(15px + 4vw); font-weight: bold; padding-top: 3vh;">Esame di Stato 2022/2023</p>
+                <p style="font-size: calc(13px + 3.5vw); padding-top: 3vh;">Ciotola Emanuele</p>
+                <p class="citazioneHomePage"><span style="font-style: italic;">"Il tempo è come un vento che soffia via tutto,<br>ma che ci lascia anche il dono dei ricordi"</span><br>– Emily Dickinson</p>
+            </div>
+        </div>
+        <div style="background-color: #EDE8DD; line-height: 0;">
+            <img src="Assets/images/FotoRicordi.svg" width="100%">
+        </div>
+    </div>
+
+    <div id="educazione_civica_Page" style="height: 1000px; background-color: #040405;">
+    </div>
+
+    <div id="materie_Page" style="height: 1000px; background-color: #EDE8DD;">
+    </div>
+</body>
+</html>
