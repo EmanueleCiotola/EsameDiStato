@@ -87,6 +87,7 @@ nav a.active {
 }
 
 nav a:hover::after,
+nav a.hover::before,
 nav a.active::before { /* rende visibile striscia sotto link onHover */
     Content: "";
     position: absolute;
@@ -99,17 +100,6 @@ nav a.active::before { /* rende visibile striscia sotto link onHover */
     transition: .3s ease;
     pointer-events: none; /* evita bug che rende la striscia cliccabile */
 }
-
-nav a,
-nav a:hover,
-nav a:click,
-nav a:visited{
-    border:none;
-    outline:none;
-    text-decoration:none;
-    color:inherit;
-    -webkit-tap-highlight-color: red;
-  }
 /* Fine Stile Navbar */
 
 
