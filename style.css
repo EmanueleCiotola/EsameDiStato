@@ -85,20 +85,22 @@ nav a.active {
     color: #FEFEFE;
 }
 
-@media (hover: hover) {
-nav a:hover::after,
-nav a.active::before { /* rende visibile striscia sotto link onHover */
-    Content: "";
-    position: absolute;
-    background-color: #d52d08;
-    border-radius: 20px;
-    height: 3px;
-    width: 100%;
-    left: 0;
-    bottom: -5px;
-    transition: .3s ease;
-    pointer-events: none; /* evita bug che rende la striscia cliccabile */
-}}
+@media (hover: hover) { /* per evitare bug su dispositivi mobili che lascia la proprietà hover attiva dopo la pressione */
+    nav a:hover::after,
+    nav a.active::before { /* rende visibile striscia sotto link onHover */
+        Content: "";
+        position: absolute;
+        background-color: #d52d08;
+        border-radius: 20px;
+        height: 3px;
+        width: 100%;
+        left: 0;
+        bottom: -5px;
+        transition: .3s ease;
+        pointer-events: none; /* evita bug che rende la striscia cliccabile */
+        -webkit-tap-highlight-color: transparent !important;
+    }
+}
 /* Fine Stile Navbar */
 
 

@@ -1,15 +1,31 @@
 var lastScrollTop = 0;
-navbar = document.getElementById("menu");
+let timer = null;
+const navbar = document.getElementById("menu");
 window.addEventListener("scroll", function(){
-    var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    if (scrollTop > lastScrollTop) {
-        navbar.style.top = "-100px"; // Nascondi la navbar
-    } else {
-        navbar.style.top = "0px"; // Mostra la navbar
-    }
-    lastScrollTop = scrollTop;
+    clearTimeout(timer);
+    navbar.style.top = "0px"
+    timer = setTimeout(function(){ // nascondi la barra se non si scolla per un secondo e mezzo e non si è a inizio home
+        if (window.pageYOffset != 0) {
+            navbar.style.top = "-100px";
+        }
+    }, 1.5 * 1000);
 
-    // La parte di funzione che segue serve ad attivare e disattivare i link nella navbar durabte lo scroll
+    //? nascondi la barra se si scorre in basso e mostrala se si scorre in alto. Rinascondila se non si scorre per 5 secondi
+    // clearTimeout(timer);
+    // var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    // if (scrollTop > lastScrollTop) {
+    //     navbar.style.top = "-100px"; // nascondi la navbar
+    // } else {
+    //     navbar.style.top = "0px"; // mostra la navbar
+    // }
+    // lastScrollTop = scrollTop;
+    // timer = setTimeout(function() { // nascondi la navbar se non si scrolla per 5 secondi e non si è all'inizio della home
+    //     if (lastScrollTop != 0) {
+    //         navbar.style.top = "-100px";
+    //     }
+    // }, 5 * 1000);
+
+    // la parte di funzione che segue serve ad attivare e disattivare i link nella navbar durabte lo scroll
     const divs = document.querySelectorAll("#home_Page, #educazione_civica_Page, #materie_Page");
     const navLinks = document.querySelectorAll("#home, #educazione_civica, #materie");
     for (let i = 0; i < 3; i++) {
