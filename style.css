@@ -68,7 +68,7 @@ nav ul li {
 }
 
 nav a,
-nav a:focus {
+nav a:focus::after {
     color: #A2A2A4;
     text-decoration: none; /* elimina elementi decorativi dei link presenti di default */
     position: relative;
