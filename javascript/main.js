@@ -16,7 +16,8 @@ navbar.addEventListener("mouseout", function() {
 // questa parte nasconde la navbar se non si scolla per un secondo e mezzo e non si è all'inizio della home
 window.addEventListener("scroll", function(){
     clearTimeout(timer);
-    navbar.style.top = "0px"
+    navbar.style.top = "0px";
+
     timer = setTimeout(function(){
         if (window.pageYOffset != 0) {
             navbar.style.top = "-100px";
@@ -55,17 +56,25 @@ window.addEventListener("scroll", function(){
     }
 })
 
-function goTo(daAttivare) { // attiva il link cliccato nella navbar e scrolla fino al div corrispondente
+function goTo(daAttivare) {
     const link = document.querySelector("nav a.active");
-    link.classList.remove("active", "hover"); // la classe hover serve a prolungare l'effetto hover fino a fine animazione
-    document.getElementById(daAttivare).classList.add("active", "hover");
-    
+    link.classList.remove("active");
+
     const targetDiv = document.getElementById(daAttivare + "_Page");
-    window.scrollTo({
+    window.scroll({
         top: targetDiv.offsetTop,
     });
+
+    document.getElementById(daAttivare).classList.add("active", "hover");
+
+    window.addEventListener("scroll", function() { //evita che la classe hover venga lasciata attiva se si scrolla durante animazione
+        link.classList.remove("hover");
+        window.removeEventListener("scroll", this);
+    });
 }
-//TODO se scorri durante l'animazione scrollTo la classe hover non viene rimossa
+
+
+
 //TODO quando il cursore passa all'altezza della scrollbar devi rimostrarla
 //! (con vecchia navbar) quando scorre verso l'alto la navbar resta ferma e quando scorre verso il basso sparisce. Deve restare ferma sempre
 //TODO su mobile la navbar fa casino con gli hover se tieni premuto ed evidenzia link del menu quando li premi
