@@ -10,7 +10,9 @@ navbar.addEventListener("mouseover", function() {
 navbar.addEventListener("mouseout", function() {
     // imposta un nuovo timer per nascondere la navbar dopo un secondo e mezzo che non ci si trova su di essa
     timer = setTimeout(function() {
-        navbar.style.top = "-100px";
+        if (window.pageYOffset != 0) {
+            navbar.style.top = "-100px";
+        }
     }, 1.5 * 1000);
 });
 // questa parte nasconde la navbar se non si scolla per un secondo e mezzo e non si è all'inizio della home
@@ -65,17 +67,13 @@ function goTo(daAttivare) {
         top: targetDiv.offsetTop,
     });
 
-    document.getElementById(daAttivare).classList.add("active", "hover");
-
-    window.addEventListener("scroll", function() { //evita che la classe hover venga lasciata attiva se si scrolla durante animazione
-        link.classList.remove("hover");
-        window.removeEventListener("scroll", this);
-    });
+    document.getElementById(daAttivare).classList.add("active");
 }
 
 
 
-//TODO quando il cursore passa all'altezza della scrollbar devi rimostrarla
+//TODO quando si scorre e si ha già il cursore sulla navbar questa non resta visibile
+//? quando il cursore passa all'altezza della scrollbar devi rimostrarla
 //! (con vecchia navbar) quando scorre verso l'alto la navbar resta ferma e quando scorre verso il basso sparisce. Deve restare ferma sempre
 //TODO su mobile la navbar fa casino con gli hover se tieni premuto ed evidenzia link del menu quando li premi
 

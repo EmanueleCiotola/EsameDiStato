@@ -67,7 +67,8 @@ nav ul li {
     padding-left: calc(15px + 1vw); /* padding a sinistra di ogni link della navbar */
 }
 
-nav a {
+nav a,
+nav a:focus {
     color: #A2A2A4;
     text-decoration: none; /* elimina elementi decorativi dei link presenti di default */
     position: relative;
@@ -87,7 +88,6 @@ nav a.active {
 }
 
 nav a:hover::after,
-nav a.hover::before,
 nav a.active::before { /* rende visibile striscia sotto link onHover */
     Content: "";
     position: absolute;
