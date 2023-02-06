@@ -52,7 +52,7 @@ nav {
     justify-content: center;
     flex-direction: column;
     align-items: end;
-    background-color: blue;
+    background-color: #040405;
     display: flex;
     position: fixed;
     top: 0;
@@ -67,8 +67,8 @@ nav ul li {
     padding-left: calc(15px + 1vw); /* padding a sinistra di ogni link della navbar */
 }
 
-nav a,
-nav a:focus::after {
+@media (hover: hover) {
+nav a {
     color: #A2A2A4;
     text-decoration: none; /* elimina elementi decorativi dei link presenti di default */
     position: relative;
@@ -80,6 +80,7 @@ nav a:focus::after {
     -ms-user-select: none; /* IE, ms-edge */
     font-size: calc(10px + 0.8vw);
     background-color: transparent;
+}
 }
 
 /* nav a:hover, */
