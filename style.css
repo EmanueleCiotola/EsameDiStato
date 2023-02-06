@@ -67,7 +67,6 @@ nav ul li {
     padding-left: calc(15px + 1vw); /* padding a sinistra di ogni link della navbar */
 }
 
-@media (hover: hover) {
 nav a {
     color: #A2A2A4;
     text-decoration: none; /* elimina elementi decorativi dei link presenti di default */
@@ -81,14 +80,15 @@ nav a {
     font-size: calc(10px + 0.8vw);
     background-color: transparent;
 }
-}
 
 /* nav a:hover, */
 nav a.active {
     color: #FEFEFE;
 }
 
+@media (hover: hover) {
 nav a:hover::after,
+nav a.hover::before,
 nav a.active::before { /* rende visibile striscia sotto link onHover */
     Content: "";
     position: absolute;
@@ -100,7 +100,7 @@ nav a.active::before { /* rende visibile striscia sotto link onHover */
     bottom: -5px;
     transition: .3s ease;
     pointer-events: none; /* evita bug che rende la striscia cliccabile */
-}
+}}
 /* Fine Stile Navbar */
 
 
