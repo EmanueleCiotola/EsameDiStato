@@ -8,33 +8,45 @@
     <title>Home</title>
 </head>
 <body>
-    <div class="schermataPrincipale">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-        <nav id="menu">
-            <ul>
-                <li><a id="home" class="active" onclick="goTo(id)">Home</a></li><!--
-                --><li><a id="educazione_civica" onclick="goTo(id)">Educazione Civica</a></li><!--
-                --><li><a id="materie"  onclick="goTo(id)">Materie</a>
-                </li>
-            </ul>
-        </nav>
-        <script src="javascript/main.js"></script>
+    <nav id="menu">
+        <ul>
+            <li><a id="home" class="active" onclick="goTo(id)">Home</a></li><!--
+            --><li><a id="educazione_civica" onclick="goTo(id)">Educazione Civica</a></li><!--
+            --><li><a id="materie"  onclick="goTo(id)">Materie</a>
+            </li>
+        </ul>
+    </nav>
+    <script src="javascript/navbar.js"></script>
+
+    <section class="schermataPrincipale">
         <div id="home_Page" style="height: 100vh; display: flex; flex-flow: column;">
             <div style="flex-grow: 1; background-image: url(Assets/images/GraffitoViaDellaPace.svg); background-position: bottom right; background-repeat: no-repeat; padding-left: 20px; margin-top: calc(45px + 1vw);">
-                <p style="font-size: calc(15px + 4vw); font-weight: bold; padding-top: 3vh;">Esame di Stato 2022/2023</p>
-                <p style="font-size: calc(13px + 3.5vw); padding-top: 3vh;">Ciotola Emanuele</p>
-                <p class="citazioneHomePage"><span style="font-style: italic;">"Il tempo è come un vento che soffia via tutto,<br>ma che ci lascia anche il dono dei ricordi"</span><br>– Emily Dickinson</p>
+                <p class="testoHome osservato fadeIn" style="font-size: calc(15px + 4vw); font-weight: bold;">Esame di Stato 2022/2023</p>
+                <p class="testoHome osservato fadeIn" style="font-size: calc(13px + 3.5vw);">Ciotola Emanuele</p>
+                <p class="citazioneHomePage osservato fadeIn"><span style="font-style: italic;">"Il tempo è come un vento che soffia via tutto,<br>ma che ci lascia anche il dono dei ricordi"</span><br>– Emily Dickinson</p>
             </div>
         </div>
         <div style="background-color: #EDE8DD; line-height: 0; user-select: none; -moz-user-select: none; -khtml-user-select: none; -webkit-user-select: none; -o-user-select: none;">
             <img src="Assets/images/FotoRicordi.svg" width="100%">
         </div>
-    </div>
+    </section>
 
-    <div id="educazione_civica_Page" style="height: 1000px; background-color: #040405;">
-    </div>
+    <section id="educazione_civica_Page" style="height: 1000px; background-color: #040405; padding: calc(45px + 1vw) 20px 0 20px;">
+        <div class="osservato fadeIn">
+            <p style="font-size: calc(13px + 3.5vw); font-weight: bold; text-align: center;">Etica</p>
+            <p style="font-size: calc(11px + 1.5vw); font-weight: bold; text-align: center;">delle scienze e delle nuove tecnologie</p>
+        </div>
+        <div style="display: flex; flex-direction: rows; flex-wrap: wrap; gap: 20px;">
+            <div id="italiano" class="materiaEC" onclick="mostra_nascondi(id)">
+                <p class="titoloMateriaEC">Italiano</p>
+                <p class="testoMateriaEC">Sottotitolo o descrizione.</p>
+            </div>
+        </div>
+    </section>
 
-    <div id="materie_Page" style="height: 1000px; background-color: #EDE8DD;">
-    </div>
+    <section id="materie_Page" style="height: 1000px; background-color: #EDE8DD;">
+    </section>
+
+    <script src="javascript/main.js"></script>
 </body>
 </html>
