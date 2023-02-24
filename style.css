@@ -148,36 +148,29 @@ nav a.active::before { /* rende visibile striscia sotto link onHover */
 
 
 /* Educazione civica */
-.materiaEC {
-    background-color: rgb(32, 34, 37, 0.95);
-    border-radius: 20px;
-    text-align: center;
-    flex: auto;
-    min-width: 300px;
-    transition: .3s ease;
-}
 
-.materiaEC .titoloMateriaEC {
-    font-size: calc(11px + 1.1vw);
-    font-weight: 500;
-    padding-top: 2vh;
-}
-
-.materiaEC .testoMateriaEC {
-    font-size: calc(9px + 0.8vw);
-    padding-bottom: 2vh;
-}
+/* Fina Educazione Civica */
 
 
 
 /* Animazioni */
-.fadeIn {
+.fadeInH {
     opacity: 0;
-    transform: translate(-5vw, 0vh);
-    transition: .4s all cubic-bezier(.215, .61, .355, .1);
+    transform: translateY(5vw);
+    transition: all 1s cubic-bezier(.215, .61, .355, 1);
 }
-.fadeIn.mostrato{
+.fadeInH.mostrato {
     opacity: 1;
-    transform: translate(0vw, 0vh);
+    transform: translateY(0vw);
 }
-/* Fine animazioni */
+
+.fadeInW {
+    opacity: 0;
+    transform: translateX(-5vw);
+    transition: all 1s cubic-bezier(.215, .61, .355, 1);
+}
+.fadeInW.mostrato{
+    opacity: 1;
+    transform: translateX(0vw);
+}
+/* Fine Animazioni */
