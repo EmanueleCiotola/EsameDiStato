@@ -148,7 +148,15 @@ nav a.active::before { /* rende visibile striscia sotto link onHover */
 
 
 /* Educazione civica */
-
+.materiaEC {
+    margin-bottom: 10vh;
+    padding: calc(10px + 4vh) calc(10px + 4vw) calc(10px + 4vh) calc(10px + 4vw);
+    background-color: rgb(32, 34, 37, 0.95);
+    border-radius: 20px;
+}
+.materiaEC .materiaEC_titolo {
+    padding-right: 5vw;
+}
 /* Fina Educazione Civica */
 
 
@@ -156,20 +164,20 @@ nav a.active::before { /* rende visibile striscia sotto link onHover */
 /* Animazioni */
 .fadeInH {
     opacity: 0;
-    transform: translateY(5vw);
+    transform: translateY(calc(10px + 5vh));
     transition: all 1s cubic-bezier(.215, .61, .355, 1);
 }
 .fadeInH.mostrato {
     opacity: 1;
-    transform: translateY(0vw);
+    transform: translateY(0vh);
 }
 
 .fadeInW {
     opacity: 0;
-    transform: translateX(-5vw);
+    transform: translateX(calc(-10px - 5vw));
     transition: all 1s cubic-bezier(.215, .61, .355, 1);
 }
-.fadeInW.mostrato{
+.fadeInW.mostrato {
     opacity: 1;
     transform: translateX(0vw);
 }
