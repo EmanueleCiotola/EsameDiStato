@@ -1,0 +1,192 @@
+@font-face {
+    font-family: myFont;
+    src: url("Assets/fonts/MuseoModerno-VariableFont_wght.ttf");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #040405;
+    color: #FEFEFE;
+    font-family: "myFont";
+}
+
+
+
+
+/* Stile Scrollbar */
+* { /* Modifica scrollbar su Firefox */
+    scrollbar-width: 12px;
+    scrollbar-color: #d52d08 #040405;
+  }
+  
+*::-webkit-scrollbar { /* Modifica scrollbar su Chrome, Edge, and Safari */
+    width: 12px;
+  }
+  
+*::-webkit-scrollbar-track {
+    background: #040405;
+  }
+  
+*::-webkit-scrollbar-thumb {
+    background-color: #d52d08;
+    border-radius: 20px;
+    border: 3px solid #040405;
+  }
+/* Fine Stile Scrollbar */
+
+
+
+/* Stile Navbar */
+nav {
+    padding: 10px 20px 15px 0;
+    height: calc(45px + 1vw);
+    justify-content: center;
+    flex-direction: column;
+    align-items: end;
+    background-color: #040405;
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transition: .3s ease;
+    z-index: 10;
+}
+
+nav ul li {
+    display: inline-block; /* allinea orizzontalmente i link della navbar */
+    padding-left: calc(15px + 1vw); /* padding a sinistra di ogni link della navbar */
+}
+
+nav a {
+    color: #A2A2A4;
+    text-decoration: none; /* elimina elementi decorativi dei link presenti di default */
+    position: relative;
+    transition: all .3s ease; /* transizione cambio colore onHover */
+    cursor: pointer;
+    user-select: none;
+    -moz-user-select: none; /* firefox specific */
+    -webkit-user-select: none; /* Chrome, Opera and Safari*/
+    -ms-user-select: none; /* IE, ms-edge */
+    font-size: calc(10px + 0.8vw);
+    background-color: transparent;
+}
+
+/* nav a:hover, */
+nav a.active {
+    color: #FEFEFE;
+}
+
+nav a:hover::after,
+/* nav a.hover::before, */ /*TODO rimuovi o implementa*/
+nav a.active::before { /* rende visibile striscia sotto link onHover */
+    Content: "";
+    position: absolute;
+    background-color: #d52d08;
+    border-radius: 20px;
+    height: 3px;
+    width: 100%;
+    left: 0;
+    bottom: -5px;
+    transition: .3s ease;
+    pointer-events: none; /* evita bug che rende la striscia cliccabile */
+}
+/* Fine Stile Navbar */
+
+
+
+/* Prima Parte Homepage */
+@media (min-height: 350px) { /* layout testo in devices medi (layout citazione su desktop, più 350px in altezza) */
+    .testoHome{
+        padding-top: 3vh;
+    }
+}
+
+.citazioneHomePage {
+    font-size: calc(10px + 0.8vw);
+    font-weight: lighter;
+    background-color: rgb(32, 34, 37, 0.95); /* Colore con trasparenza del 95% */
+    position: absolute;
+    border-radius: 20px;
+    padding: 0.5em 1em 0.5em 1em;
+}
+
+@media (min-width: 0px) { /* layout citazione in piccoli devices (tablets, 768px e superiori) */
+    .citazioneHomePage{
+        margin-top: 7vh;
+    }
+    .testoHome{ /* layout testo in devices medi (layout citazione su desktop, meno di 350px in altezza) */
+        padding-top: 0;
+    }
+    .materiaEC .titolo_materiaEC { /* Serve per sezione educazione civica */
+        padding: 0 0 3vh 0;
+    }
+}
+
+@media (min-width: 768px) {
+    .materiaEC { /* Serve per sezione educazione civica */
+        display: flex;
+    }
+    .titolo_materiaEC.sinistra { /* Serve per sezione educazione civica */
+        padding: 0 5vw 0 0;
+    }
+    .titolo_materiaEC.destra { /* Serve per sezione educazione civica */
+        padding: 0 0 0 5vw;
+        text-align: end; /*TODO rimuovere per tornare a titolo allineato normalmente */
+    }
+    @media (min-height: 0px) { /* layout citazione in devices medi (layout citazione su desktop, 992px e superiori in larghezza e meno di 400px in altezza) */
+        .citazioneHomePage{
+            bottom: calc(5px + 1vh);
+        }
+    }
+    @media (min-height: 400px) { /* layout citazione in devices medi (layout citazione su desktop, 992px e superiori in larghezza e più 400px in altezza) */
+        .citazioneHomePage{
+            bottom: calc(20px + 3vh);
+        }
+    }
+}
+/* Fine Prima Parte Homepage */
+
+
+
+/* Educazione civica */
+.materiaEC {
+    margin-bottom: 10vh;
+    padding: calc(10px + 4vh) calc(10px + 4vw) calc(10px + 4vh) calc(10px + 4vw);
+    background-color: rgb(32, 34, 37, 0.95);
+    border-radius: 20px;
+}
+/* Fina Educazione Civica */
+
+
+
+/* Animazioni */
+.fadeInH {
+    opacity: 0;
+    transform: translateY(calc(10px + 5vh));
+    transition: all 1s cubic-bezier(.215, .61, .355, 1);
+}
+.fadeInH.mostrato {
+    opacity: 1;
+    transform: translateY(0vh);
+}
+
+.fadeInW {
+    opacity: 0;
+    transform: translateX(calc(-10px - 5vw));
+    transition: all 1s cubic-bezier(.215, .61, .355, 1);
+}
+.fadeInW.mostrato {
+    opacity: 1;
+    transform: translateX(0vw);
+}
+/* Fine Animazioni */
