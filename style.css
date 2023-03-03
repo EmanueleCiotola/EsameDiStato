@@ -105,11 +105,6 @@ nav a.active::before { /* rende visibile striscia sotto link onHover */
 
 
 /* Prima Parte Homepage */
-@media (min-height: 0px) { /* layout testo in devices medi (layout citazione su desktop, meno di 350px in altezza) */
-    .testoHome{
-        padding-top: 0;
-    }
-}
 @media (min-height: 350px) { /* layout testo in devices medi (layout citazione su desktop, più 350px in altezza) */
     .testoHome{
         padding-top: 3vh;
@@ -129,9 +124,24 @@ nav a.active::before { /* rende visibile striscia sotto link onHover */
     .citazioneHomePage{
         margin-top: 7vh;
     }
+    .testoHome{ /* layout testo in devices medi (layout citazione su desktop, meno di 350px in altezza) */
+        padding-top: 0;
+    }
+    .materiaEC .titolo_materiaEC { /* Serve per sezione educazione civica */
+        padding: 0 0 3vh 0;
+    }
 }
 
 @media (min-width: 768px) {
+    .materiaEC { /* Serve per sezione educazione civica */
+        display: flex;
+    }
+    .titolo_materiaEC.sinistra { /* Serve per sezione educazione civica */
+        padding: 0 5vw 0 0;
+    }
+    .titolo_materiaEC.destra { /* Serve per sezione educazione civica */
+        padding: 0 0 0 5vw;
+    }
     @media (min-height: 0px) { /* layout citazione in devices medi (layout citazione su desktop, 992px e superiori in larghezza e meno di 400px in altezza) */
         .citazioneHomePage{
             bottom: calc(5px + 1vh);
@@ -153,9 +163,6 @@ nav a.active::before { /* rende visibile striscia sotto link onHover */
     padding: calc(10px + 4vh) calc(10px + 4vw) calc(10px + 4vh) calc(10px + 4vw);
     background-color: rgb(32, 34, 37, 0.95);
     border-radius: 20px;
-}
-.materiaEC .materiaEC_titolo {
-    padding-right: 5vw;
 }
 /* Fina Educazione Civica */
 
