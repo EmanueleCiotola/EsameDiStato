@@ -141,6 +141,7 @@ nav a.active::before { /* rende visibile striscia sotto link onHover */
     }
     .titolo_materiaEC.destra { /* Serve per sezione educazione civica */
         padding: 0 0 0 5vw;
+        text-align: end; /*TODO rimuovere per tornare a titolo allineato normalmente */
     }
     @media (min-height: 0px) { /* layout citazione in devices medi (layout citazione su desktop, 992px e superiori in larghezza e meno di 400px in altezza) */
         .citazioneHomePage{
