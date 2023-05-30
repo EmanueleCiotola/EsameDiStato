@@ -47,9 +47,9 @@ window.addEventListener("scroll", function(){
     // }, 5 * 1000);
 
     // questa parte serve ad attivare e disattivare i link nella navbar durante lo scroll (sia scroll automatico sia manuale)
-    const sections = document.querySelectorAll("#home_Page, #educazione_civica_Page, #materie_Page");
-    const navLinks = document.querySelectorAll("#home, #educazione_civica, #materie");
-    for (let i = 0; i < 3; i++) {
+    const sections = document.querySelectorAll("#home_Page, #educazione_civica_Page, #pcto_Page, #materie_Page");
+    const navLinks = document.querySelectorAll("#home, #educazione_civica, #pcto, #materie");
+    for (let i = 0; i < 4; i++) {
         const section = sections[i];
         if (window.pageYOffset + (document.body.scrollHeight * 0.02) >= section.offsetTop) { // il "+ (document.body.scrollHeight * 0.02)" serve a dare un po' di tolleranza
           currentSectionIndex = i;

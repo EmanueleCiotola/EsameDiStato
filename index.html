@@ -11,7 +11,8 @@
     <nav id="menu">
         <ul>
             <li><a id="home" class="active" onclick="goTo(id)">Home</a></li><!--
-            --><li><a id="educazione_civica" onclick="goTo(id)">Educazione Civica</a></li><!--
+            --><li><a id="educazione_civica" onclick="goTo(id)">Educazione civica</a></li><!--
+            --><li><a id="pcto"  onclick="goTo(id)">Stage formativi</a><!--
             --><li><a id="materie"  onclick="goTo(id)">Materie</a>
             </li>
         </ul>
@@ -26,8 +27,8 @@
                 <p class="citazioneHomePage osservato fadeInW"><span style="font-style: italic;">"Il tempo è come un vento che soffia via tutto,<br>ma che ci lascia anche il dono dei ricordi"</span><br>– Emily Dickinson</p>
             </div>
         </div>
-        <div style="background-color: #EDE8DD; user-select: none; -moz-user-select: none; -khtml-user-select: none; -webkit-user-select: none; -o-user-select: none;">
-            <img src="Assets/images/FotoRicordi.svg" width="100%" oncontextmenu="return false;" draggable="false" style="padding: 0 2vw 0 2vw;">
+        <div id="fotoRicordi">
+            <img src="Assets/images/FotoRicordi.svg" width="100%" oncontextmenu="return false;" draggable="false" style="display:block; padding: 0 2vw 0 2vw;">
         </div>
     </section>
 
@@ -128,9 +129,38 @@
         </div>
     </section>
 
-    <section id="materie_Page" style="height: 1000px; background-color: #EDE8DD;">
+    <section id="pcto_Page" style="height: 1000px; background-color: #EDE8DD; padding-top: calc(45px + 1vw);">
+        <p class="osservato fadeInH" style="font-size: calc(13px + 3.5vw); font-weight: bold; text-align: center; color: #040405;">L'innovazione</p>
+        <p class="osservato fadeInH" style="font-size: calc(11px + 1.5vw); font-weight: bold; text-align: center; margin-bottom: calc(45px + 1vw); color: #040405;">il tema ricorrente della storia umana</p> <!-- concetto al posto di tema? -->
+        
+        <div class="materiaEC osservato fadeInW">
+            <div class="titolo_materiaEC sinistra">
+                <p style="font-size: calc(10px + 0.8vw);">Storia</p>
+                <p style="font-size: calc(12px + 2.5vw); font-weight: bold;">L'invenzione della<br>bomba atomica</p>
+            </div>
+            <div style="flex: 1.5;">
+                <p>L'invenzione della bomba atomica durante la Seconda Guerra Mondiale ha sollevato questioni etiche significative. Da un lato, alcuni sostengono che l'uso della bomba abbia permesso di porre fine alla guerra più rapidamente e di salvare vite umane, poiché un'invasione del Giappone avrebbe causato un numero elevato di morti. D'altro canto, l'utilizzo della bomba ha causato la morte di centinaia di migliaia di civili innocenti, e ha aperto la strada per l'utilizzo di armi nucleari in futuri conflitti. Inoltre, la decisione di utilizzare la bomba atomica è stata criticata perché il Giappone era già in condizioni precarie e stava cercando di arrendersi prima che la bomba fosse utilizzata. Ci sono state anche preoccupazioni per i suoi effetti a lungo termine sulla salute e sull'ambiente.</p>
+            </div>
+        </div>
+
     </section>
 
+    <section id="materie_Page" style="height: 1000px; background-color: #EDE8DD; padding-top: calc(45px + 1vw);">
+        <p class="osservato fadeInH" style="font-size: calc(13px + 3.5vw); font-weight: bold; text-align: center; color: #040405;">L'innovazione</p>
+        <p class="osservato fadeInH" style="font-size: calc(11px + 1.5vw); font-weight: bold; text-align: center; margin-bottom: calc(45px + 1vw); color: #040405;">il tema ricorrente della storia umana</p> <!-- concetto al posto di tema? -->
+        
+        <div class="materiaEC osservato fadeInW">
+            <div class="titolo_materiaEC sinistra">
+                <p style="font-size: calc(10px + 0.8vw);">Storia</p>
+                <p style="font-size: calc(12px + 2.5vw); font-weight: bold;">L'invenzione della<br>bomba atomica</p>
+            </div>
+            <div style="flex: 1.5;">
+                <p>L'invenzione della bomba atomica durante la Seconda Guerra Mondiale ha sollevato questioni etiche significative. Da un lato, alcuni sostengono che l'uso della bomba abbia permesso di porre fine alla guerra più rapidamente e di salvare vite umane, poiché un'invasione del Giappone avrebbe causato un numero elevato di morti. D'altro canto, l'utilizzo della bomba ha causato la morte di centinaia di migliaia di civili innocenti, e ha aperto la strada per l'utilizzo di armi nucleari in futuri conflitti. Inoltre, la decisione di utilizzare la bomba atomica è stata criticata perché il Giappone era già in condizioni precarie e stava cercando di arrendersi prima che la bomba fosse utilizzata. Ci sono state anche preoccupazioni per i suoi effetti a lungo termine sulla salute e sull'ambiente.</p>
+            </div>
+        </div>
+
+    </section>
+        
     <script src="javascript/main.js"></script>
 </body>
 </html>
