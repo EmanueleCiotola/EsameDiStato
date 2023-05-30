@@ -142,7 +142,7 @@ nav a.active::before { /* rende visibile striscia sotto link onHover */
     }
     .titolo_materiaEC.destra { /* Serve per sezione educazione civica */
         padding: 0 0 0 5vw;
-        text-align: end; /*TODO rimuovere per tornare a titolo allineato normalmente */
+        text-align: end;
     }
     @media (min-height: 0px) { /* layout citazione in devices medi (layout citazione su desktop, 992px e superiori in larghezza e meno di 400px in altezza) */
         .citazioneHomePage{
@@ -157,6 +157,9 @@ nav a.active::before { /* rende visibile striscia sotto link onHover */
 }
 /* Fine Prima Parte Homepage */
 
+
+
+/* Seconda parte Homepage */
 #fotoRicordi {
     background-color: #EDE8DD;
     user-select: none;
@@ -165,6 +168,8 @@ nav a.active::before { /* rende visibile striscia sotto link onHover */
     -webkit-user-select: none;
     -o-user-select: none;
 }
+/* Fine seconda parte Homepage */
+
 
 
 /* Educazione civica */
@@ -175,6 +180,29 @@ nav a.active::before { /* rende visibile striscia sotto link onHover */
     border-radius: 20px;
 }
 /* Fina Educazione Civica */
+
+
+
+/* PCTO */
+@media (min-width: 900px) {
+    #anniPCTO {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .annoPCTO{
+        margin-bottom: 10vh;
+    }
+}
+
+.annoPCTO {
+    padding: calc(10px + 2vh) calc(10px + 2vw) calc(10px + 2vh) calc(10px + 2vw);
+    margin: calc(8px + 1vw);
+    background-color: rgb(218, 214, 201, 0.95);
+    border-radius: 20px; 
+    font-weight: 500;
+    min-width: 250px;
+    max-width: 450px;
+}
+/* Fine PCTO */
 
 
 
