@@ -209,7 +209,7 @@ nav a.active::before { /* rende visibile striscia sotto link onHover */
     margin: 0 calc(28px + 1vw) 0 calc(28px + 1vw);
     font-weight: 500;
     padding: calc(10px + 2vh) calc(10px + 2vw) calc(10px + 2vh) calc(10px + 2vw);
-    background: rgba(237, 232, 221, 0.28);
+    background: rgba(237, 232, 221, 0.15);
     border-radius: 20px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(10px);
