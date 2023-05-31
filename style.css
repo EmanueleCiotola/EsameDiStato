@@ -196,11 +196,30 @@ nav a.active::before { /* rende visibile striscia sotto link onHover */
 .annoPCTO {
     padding: calc(10px + 2vh) calc(10px + 2vw) calc(10px + 2vh) calc(10px + 2vw);
     margin: calc(8px + 1vw);
-    background-color: rgb(218, 214, 201, 0.95);
+    background-color: rgb(218, 214, 201, 0.75);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     border-radius: 20px; 
     font-weight: 500;
     min-width: 250px;
     max-width: 450px;
+}
+
+#relazioneFinalePCTO {
+    margin: 0 calc(28px + 1vw) 0 calc(28px + 1vw);
+    font-weight: 500;
+    padding: calc(10px + 2vh) calc(10px + 2vw) calc(10px + 2vh) calc(10px + 2vw);
+    background: rgba(237, 232, 221, 0.28);
+    border-radius: 20px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.argomentoPCTO {
+    padding: calc(10px + 2vh) calc(10px + 2vw) calc(10px + 2vh) calc(10px + 2vw);
+    background-color: rgb(218, 214, 201, 0.75);
+    border-radius: 20px;
 }
 /* Fine PCTO */
 

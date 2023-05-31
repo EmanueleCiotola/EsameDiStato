@@ -51,16 +51,14 @@ window.addEventListener("scroll", function(){
     const navLinks = document.querySelectorAll("#home, #educazione_civica, #pcto, #materie");
     for (let i = 0; i < 4; i++) {
         const section = sections[i];
-        if (window.pageYOffset + (document.body.scrollHeight * 0.02) >= section.offsetTop) { // il "+ (document.body.scrollHeight * 0.02)" serve a dare un po' di tolleranza
-          currentSectionIndex = i;
-        }
+        if (window.pageYOffset + (document.body.scrollHeight * 0.02) >= section.offsetTop) currentSectionIndex = i; // il "+ (document.body.scrollHeight * 0.02)" serve a dare un po' di tolleranza
     }
     navLinks[currentSectionIndex].classList.add("active");
     for (let i = 0; i < navLinks.length; i++) {
         if (i !== currentSectionIndex) {
             navLinks[i].classList.remove("active");
         }
-    }
+    }    
 });
 
 
