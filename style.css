@@ -63,6 +63,10 @@ nav {
     z-index: 1;
 }
 
+nav.light {
+    background-color: #EDE8DD;
+}
+
 nav ul li {
     display: inline-block; /* allinea orizzontalmente i link della navbar */
     padding-left: calc(15px + 1vw); /* padding a sinistra di ogni link della navbar */
@@ -72,7 +76,7 @@ nav a {
     color: #A2A2A4;
     text-decoration: none; /* elimina elementi decorativi dei link presenti di default */
     position: relative;
-    transition: all .3s ease; /* transizione cambio colore onHover */
+    transition: all .3s ease; /* transizione cambio colore onHover e colore sfondo */
     cursor: pointer;
     user-select: none;
     -moz-user-select: none; /* firefox specific */
@@ -82,9 +86,17 @@ nav a {
     background-color: transparent;
 }
 
+nav.light a {
+    color: #575758;
+}
+
 /* nav a:hover, */
 nav a.active {
     color: #FEFEFE;
+}
+
+nav.light a.active {
+    color: #040405;
 }
 
 nav a:hover::after,

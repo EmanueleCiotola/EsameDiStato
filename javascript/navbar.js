@@ -47,18 +47,32 @@ window.addEventListener("scroll", function(){
     // }, 5 * 1000);
 
     // questa parte serve ad attivare e disattivare i link nella navbar durante lo scroll (sia scroll automatico sia manuale)
-    const sections = document.querySelectorAll("#home_Page, #educazione_civica_Page, #pcto_Page, #materie_Page");
+    const navSections = document.querySelectorAll("#home_Page, #educazione_civica_Page, #pcto_Page, #materie_Page");
     const navLinks = document.querySelectorAll("#home, #educazione_civica, #pcto, #materie");
     for (let i = 0; i < 4; i++) {
-        const section = sections[i];
-        if (window.pageYOffset + (document.body.scrollHeight * 0.02) >= section.offsetTop) currentSectionIndex = i; // il "+ (document.body.scrollHeight * 0.02)" serve a dare un po' di tolleranza
+        const section = navSections[i];
+        if (window.pageYOffset + (document.body.scrollHeight * 0.02) >= section.offsetTop) currentNavSectionIndex = i; // il "+ (document.body.scrollHeight * 0.02)" serve a dare un po' di tolleranza
     }
-    navLinks[currentSectionIndex].classList.add("active");
+    navLinks[currentNavSectionIndex].classList.add("active");
     for (let i = 0; i < navLinks.length; i++) {
-        if (i !== currentSectionIndex) {
+        if (i !== currentNavSectionIndex) {
             navLinks[i].classList.remove("active");
         }
-    }    
+    }
+
+    // questa parte serve per aggiungere la modalità light alla scrollbar nelle sezioni a sfondo chiaro
+    const sections = document.querySelectorAll("#home_Page, #fotoRicordi, #educazione_civica_Page, #pcto_Page, #materie_Page");
+    for (let i = 0; i < 5; i++) {
+        const section = sections[i];
+        if (window.pageYOffset >= section.offsetTop) {
+            currentSectionIndex = i
+            if (currentSectionIndex == 1 || currentSectionIndex == 3) {
+                navbar.classList.add("light");
+            } else {
+                navbar.classList.remove("light");
+            }
+        };
+    }
 });
 
 
