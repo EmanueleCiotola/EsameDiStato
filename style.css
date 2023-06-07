@@ -98,36 +98,19 @@ nav.light a.active {
     color: #040405 !important;
 }
 
-/* con proprietà hover tenendo premuto resta triggerata su dispositivi touch. Questo evita il bug  */
-@media (hover: hover) { /* per dispositivi che supportano un puntatore */
-    nav a:hover::after,
-    nav a.active::before { /* rende visibile striscia sotto link onHover */
-        Content: "";
-        position: absolute;
-        background-color: #d52d08;
-        border-radius: 20px;
-        height: 3px;
-        width: 100%;
-        left: 0;
-        bottom: -5px;
-        transition: .3s ease;
-        pointer-events: none; /* evita bug che rende la striscia cliccabile */
-    }
-}
-@media (hover: none) { /* per dispositivi touch */
-    nav a:active::after,
-    nav a.active::before { /* rende visibile striscia sotto link onHover */
-        Content: "";
-        position: absolute;
-        background-color: #d52d08;
-        border-radius: 20px;
-        height: 3px;
-        width: 100%;
-        left: 0;
-        bottom: -5px;
-        transition: .3s ease;
-        pointer-events: none; /* evita bug che rende la striscia cliccabile */
-    }
+nav a:hover::after,
+nav a:focus::after,
+nav a.active::before { /* rende visibile striscia sotto link onHover */
+    Content: "";
+    position: absolute;
+    background-color: #d52d08;
+    border-radius: 20px;
+    height: 3px;
+    width: 100%;
+    left: 0;
+    bottom: -5px;
+    transition: .3s ease;
+    pointer-events: none; /* evita bug che rende la striscia cliccabile */
 }
 /* Fine Stile Navbar */
 
