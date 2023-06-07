@@ -114,6 +114,11 @@ nav a.active::before { /* rende visibile striscia sotto link onHover */
     transition: .3s ease;
     pointer-events: none; /* evita bug che rende la striscia cliccabile */
 }
+@media (hover: none) {
+      nav a:active {
+        touch-action: manipulation;
+      }
+    }
 /* Fine Stile Navbar */
 
 
