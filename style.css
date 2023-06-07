@@ -99,7 +99,7 @@ nav.light a.active {
     color: #040405;
 }
 
-nav a:hover::after,
+nav a:active::after,
 /* nav a.hover::before, */ /*TODO rimuovi o implementa*/
 nav a.active::before { /* rende visibile striscia sotto link onHover */
     Content: "";
