@@ -99,7 +99,6 @@ nav.light a.active {
 }
 
 nav a:hover::after,
-nav a:focus::after,
 nav a.active::before { /* rende visibile striscia sotto link onHover */
     Content: "";
     position: absolute;
