@@ -73,13 +73,13 @@ nav ul li {
 }
 
 nav a {
-    color: #A2A2A4;
+    color: #A2A2A4 !important;
     text-decoration: none; /* elimina elementi decorativi dei link presenti di default */
     position: relative;
     transition: all .3s ease; /* transizione cambio colore onHover e colore sfondo */
     cursor: pointer;
     user-select: none;
-    -moz-user-select: none; /* firefox specific */
+    -moz-user-select: none; /* firefox */
     -webkit-user-select: none; /* Chrome, Opera and Safari*/
     -ms-user-select: none; /* IE, ms-edge */
     font-size: calc(10px + 0.8vw);
@@ -87,51 +87,75 @@ nav a {
 }
 
 nav.light a {
-    color: #575758;
+    color: #575758 !important;
 }
 
-/* nav a:hover, */
 nav a.active {
-    color: #FEFEFE;
+    color: #FEFEFE !important;
 }
 
 nav.light a.active {
-    color: #040405;
+    color: #040405 !important;
 }
 
-nav a:hover::after,
-/* nav a.hover::before, */ /*TODO rimuovi o implementa*/
-nav a.active::before { /* rende visibile striscia sotto link onHover */
-    Content: "";
-    position: absolute;
-    background-color: #d52d08;
-    border-radius: 20px;
-    height: 3px;
-    width: 100%;
-    left: 0;
-    bottom: -5px;
-    transition: .3s ease;
-    pointer-events: none; /* evita bug che rende la striscia cliccabile */
-    touch-action: none;
+/* con proprietà hover tenendo premuto resta triggerata su dispositivi touch. Questo evita il bug  */
+@media (hover: hover) { /* per dispositivi che supportano un puntatore */
+    nav a:hover::after,
+    nav a.active::before { /* rende visibile striscia sotto link onHover */
+        Content: "";
+        position: absolute;
+        background-color: #d52d08;
+        border-radius: 20px;
+        height: 3px;
+        width: 100%;
+        left: 0;
+        bottom: -5px;
+        transition: .3s ease;
+        pointer-events: none; /* evita bug che rende la striscia cliccabile */
+    }
+}
+@media (hover: none) { /* per dispositivi touch */
+    nav a:active::after,
+    nav a.active::before { /* rende visibile striscia sotto link onHover */
+        Content: "";
+        position: absolute;
+        background-color: #d52d08;
+        border-radius: 20px;
+        height: 3px;
+        width: 100%;
+        left: 0;
+        bottom: -5px;
+        transition: .3s ease;
+        pointer-events: none; /* evita bug che rende la striscia cliccabile */
+    }
 }
 /* Fine Stile Navbar */
 
 
 
 /* Prima Parte Homepage */
-@media (min-height: 350px) { /* layout testo in devices medi (layout citazione su desktop, più 350px in altezza) */
-    .testoHome{
-        padding-top: 3vh;
-    }
+#homeSection {
+    flex-grow: 1;
+    background-image: url(Assets/images/GraffitoViaDellaPace.svg);
+    background-position: bottom right;
+    background-repeat: no-repeat;
+    padding-left: 20px;
+    margin-top: calc(45px + 1vw);
 }
 
 .citazioneHomePage {
     font-size: calc(10px + 0.8vw);
     font-weight: lighter;
-    background-color: rgb(32, 34, 37, 0.95); /* Colore con trasparenza del 95% */
+    background-color: rgb(32, 34, 37, 0.95); /* colore con trasparenza del 95% */
     position: absolute;
     border-radius: 20px;
     padding: 0.5em 1em 0.5em 1em;
+}
+
+@media (min-height: 350px) { /* layout testo in devices medi (layout citazione su desktop, più 350px in altezza) */
+    .testoHome{
+        padding-top: 3vh;
+    }
 }
 
 @media (min-width: 0px) { /* layout citazione in piccoli devices (tablets, 768px e superiori) */
@@ -141,19 +165,19 @@ nav a.active::before { /* rende visibile striscia sotto link onHover */
     .testoHome{ /* layout testo in devices medi (layout citazione su desktop, meno di 350px in altezza) */
         padding-top: 0;
     }
-    .materiaEC .titolo_materiaEC { /* Serve per sezione educazione civica */
+    .materiaEC .titolo_materiaEC { /* serve per sezione educazione civica */
         padding: 0 0 3vh 0;
     }
 }
 
 @media (min-width: 768px) {
-    .materiaEC { /* Serve per sezione educazione civica */
+    .materiaEC { /* serve per sezione educazione civica */
         display: flex;
     }
-    .titolo_materiaEC.sinistra { /* Serve per sezione educazione civica */
+    .titolo_materiaEC.sinistra { /* serve per sezione educazione civica */
         padding: 0 5vw 0 0;
     }
-    .titolo_materiaEC.destra { /* Serve per sezione educazione civica */
+    .titolo_materiaEC.destra { /* serve per sezione educazione civica */
         padding: 0 0 0 5vw;
         text-align: end;
     }
@@ -197,18 +221,24 @@ nav a.active::before { /* rende visibile striscia sotto link onHover */
 
 
 /* PCTO */
-@media (min-width: 900px) {
+@media (max-width: 900px) {
     #anniPCTO {
-        grid-template-columns: 1fr 1fr 1fr;
+        flex-direction: column;
+        align-items: center;
     }
-    .annoPCTO{
-        margin-bottom: 10vh;
-    }
+}
+
+#anniPCTO {
+    row-gap: calc(10px + 2vh);
+    column-gap: calc(10px + 2vw);
+    padding: 0 20px 0 20px;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
 }
 
 .annoPCTO {
     padding: calc(10px + 2vh) calc(10px + 2vw) calc(10px + 2vh) calc(10px + 2vw);
-    margin: calc(8px + 1vw);
     background-color: rgb(218, 214, 201, 0.80);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
@@ -216,10 +246,15 @@ nav a.active::before { /* rende visibile striscia sotto link onHover */
     font-weight: 500;
     min-width: 250px;
     max-width: 450px;
+    width: 100%;
+}
+
+.annoPCTO.centrale {
+    margin: calc(10px + 2vh) 0 calc(10px + 2vh);
 }
 
 #relazioneFinalePCTO {
-    margin: 0 calc(28px + 1vw) 0 calc(28px + 1vw);
+    margin: calc(45px + 1vw) 20px 10vh 20px;
     font-weight: 500;
     padding: calc(10px + 2vh) calc(10px + 2vw) calc(10px + 2vh) calc(10px + 2vw);
     background: rgba(237, 232, 221, 0.15);
@@ -235,6 +270,23 @@ nav a.active::before { /* rende visibile striscia sotto link onHover */
     border-radius: 20px;
 }
 /* Fine PCTO */
+
+
+
+/* Testi di default */
+.titoloSezione {
+    font-size: calc(13px + 3.5vw);
+    font-weight: bold;
+    text-align: center;
+}
+
+.sottotitoloSezione {
+    font-size: calc(11px + 1.5vw);
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: calc(45px + 1vw);
+}
+/* Fine testi di default */
 
 
 
