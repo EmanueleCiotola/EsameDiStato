@@ -100,6 +100,7 @@ nav.light a.active {
 }
 
 nav a:active::after,
+nav a:hover::after,
 /* nav a.hover::before, */ /*TODO rimuovi o implementa*/
 nav a.active::before { /* rende visibile striscia sotto link onHover */
     Content: "";
