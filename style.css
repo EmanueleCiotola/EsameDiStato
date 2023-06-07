@@ -99,7 +99,6 @@ nav.light a.active {
     color: #040405;
 }
 
-nav a:active::after,
 nav a:hover::after,
 /* nav a.hover::before, */ /*TODO rimuovi o implementa*/
 nav a.active::before { /* rende visibile striscia sotto link onHover */
@@ -113,12 +112,8 @@ nav a.active::before { /* rende visibile striscia sotto link onHover */
     bottom: -5px;
     transition: .3s ease;
     pointer-events: none; /* evita bug che rende la striscia cliccabile */
+    touch-action: manipulation;
 }
-@media (hover: none) {
-      nav a:active {
-        touch-action: manipulation;
-      }
-    }
 /* Fine Stile Navbar */
 
 
