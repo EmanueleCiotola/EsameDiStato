@@ -35,7 +35,7 @@ window.addEventListener("scroll", function(){
     const navLinks = document.querySelectorAll("#home, #educazione_civica, #pcto, #materie");
     for (let i = 0; i < 4; i++) {
         const section = navSections[i];
-        if (window.pageYOffset + (document.body.scrollHeight * 0.02) >= section.offsetTop) currentNavSectionIndex = i; // il "+ (document.body.scrollHeight * 0.02)" serve a dare un po' di tolleranza
+        if ((window.pageYOffset + window.visualViewport.offsetTop) + (document.body.scrollHeight * 0.02) >= section.offsetTop) currentNavSectionIndex = i; // il "+ (document.body.scrollHeight * 0.02)" serve a dare un po' di tolleranza
     }
     navLinks[currentNavSectionIndex].classList.add("active");
     for (let i = 0; i < navLinks.length; i++) {
@@ -48,7 +48,7 @@ window.addEventListener("scroll", function(){
     const sections = document.querySelectorAll("#home_Page, #fotoRicordi, #educazione_civica_Page, #pcto_Page, #materie_Page");
     for (let i = 0; i < 5; i++) {
         const section = sections[i];
-        if (window.pageYOffset >= section.offsetTop) {
+        if ((window.pageYOffset + window.visualViewport.offsetTop) >= section.offsetTop) {
             currentSectionIndex = i
             if (currentSectionIndex == 1 || currentSectionIndex == 3) {
                 navbar.classList.add("light");

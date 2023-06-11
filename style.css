@@ -11,14 +11,12 @@
 
 html {
     scroll-behavior: smooth;
-    height: 100%
 }
 
 body {
     background-color: #040405;
     color: #FEFEFE;
     font-family: "myFont";
-    height: 100%
 }
 
 
