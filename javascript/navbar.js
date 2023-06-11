@@ -51,6 +51,7 @@ window.addEventListener("scroll", function(){
         if (window.pageYOffset >= section.offsetTop) {
             currentSectionIndex = i
             if (currentSectionIndex == 1 || currentSectionIndex == 3) {
+                console.log("ora chiaro");
                 navbar.classList.add("light");
             } else {
                 navbar.classList.remove("light");
