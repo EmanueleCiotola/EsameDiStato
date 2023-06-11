@@ -23,11 +23,6 @@ body {
 
 
 /* Stile Scrollbar */
-* { /* Modifica scrollbar su Firefox */
-    scrollbar-width: 12px;
-    scrollbar-color: #d52d08 #040405;
-  }
-  
 *::-webkit-scrollbar { /* Modifica scrollbar su Chrome, Edge, and Safari */
     width: 12px;
   }

@@ -17,4 +17,6 @@ elementiDaOsservare.forEach((element) => {
 
 
 
-//TODO su mobile la navbar fa casino con gli hover se tieni premuto ed evidenzia link del menu quando li premi
+//TODO su mobile la navbar fa casino con gli hover
+//TODO il colore della navbar fa casino
+//TODO su mobile la navbar non viene più nascosta dopo che si è premuto un bottone. Penso che onhover resti bloccato
