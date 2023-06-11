@@ -5,14 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Home</title>
+    <title>Esame di stato</title>
 </head>
 <body>
     <nav id="menu">
         <ul>
             <li><a id="home" class="active" onclick="goTo(id)">Home</a></li><!--
             --><li><a id="educazione_civica" onclick="goTo(id)">Educazione civica</a></li><!--
-            --><li><a id="pcto"  onclick="goTo(id)">PCTO</a><!--
+            --><li><a id="pcto"  onclick="goTo(id)">Pcto</a><!--
             --><li><a id="materie"  onclick="goTo(id)">Materie</a>
             </li>
         </ul>
@@ -21,21 +21,21 @@
 
     <section class="schermataPrincipale">
         <div id="home_Page" style="height: 100vh; display: flex; flex-flow: column;">
-            <div style="flex-grow: 1; background-image: url(Assets/images/GraffitoViaDellaPace.svg); background-position: bottom right; background-repeat: no-repeat; padding-left: 20px; margin-top: calc(45px + 1vw);">
+            <div id="homeSection">
                 <p class="testoHome osservato fadeInH" style="font-size: calc(15px + 4vw); font-weight: bold;">Esame di Stato 2022/2023</p>
                 <p class="testoHome osservato fadeInH" style="font-size: calc(13px + 3.5vw);">Ciotola Emanuele</p>
                 <p class="citazioneHomePage osservato fadeInW"><span style="font-style: italic;">"Il tempo è come un vento che soffia via tutto,<br>ma che ci lascia anche il dono dei ricordi"</span><br>– Emily Dickinson</p>
             </div>
         </div>
         <div id="fotoRicordi">
-            <img src="Assets/images/FotoRicordi.svg" width="100%" oncontextmenu="return false;" draggable="false" style="display:block; padding: 0 2vw 0 2vw;">
+            <img src="Assets/images/FotoRicordi.svg" width="100%" oncontextmenu="return false;" draggable="false" style="display: block; padding: 0 2vw 0 2vw;">
         </div>
     </section>
 
-    <section id="educazione_civica_Page" style="background-color: #040405; padding-top: calc(45px + 1vw);">
-        <p class="osservato fadeInH" style="font-size: calc(13px + 3.5vw); font-weight: bold; text-align: center;">Etica</p>
-        <p class="osservato fadeInH" style="font-size: calc(11px + 1.5vw); font-weight: bold; text-align: center; margin-bottom: calc(45px + 1vw);">delle scienze e delle nuove tecnologie</p>
-        <div style="background-image: url(Assets/images/TriangoliViaDellaPace.svg); padding: 0 20px 10px 20px;">
+    <section id="educazione_civica_Page" style="padding-top: calc(45px + 1vw);">
+        <p class="osservato fadeInH titoloSezione">Etica</p>
+        <p class="osservato fadeInH sottotitoloSezione">delle scienze e delle nuove tecnologie</p>
+        <div style="background-image: url(Assets/images/TriangoliViaDellaPace.svg); padding: calc(45px + 1vw) 0 10px 0;">
             <div class="materiaEC osservato fadeInW">
                 <div class="titolo_materiaEC sinistra">
                     <p style="font-size: calc(10px + 0.8vw);">Storia</p>
@@ -60,16 +60,16 @@
                     <p style="font-size: calc(12px + 2.5vw); font-weight: bold;">I ragazzi di<br>via Panisperna</p>  
                 </div>
                 <div style="flex: 1.5;">
-                    <p>"Ragazzi di via Panisperna" è il soprannome di un gruppo di giovani scienziati italiani, guidato da Enrico Fermi, che negli anni trenta del Novecento operò presso il Regio istituto di fisica dell'Università di Roma, allora ubicato in via Panisperna n. 90. La grandezza di questo gruppo sta nell'aver dato l'avvio per lo sviluppo scientifico del reattore e bomba nucleare, scoprendo la proprietà dei neutroni lenti. Facevano parte di questo eccezionale gruppo: Eduardo Amaldi, Franco Rasetti, Emilio Segrè, Bruno Pontecorvo, Oscar D'Agostino, e il giovane Ettore Majorana. Con l'inizio del periodo fascista e, in particolare, l'introduzione delle leggi razziali in Italia, il gruppo dei ragazzi di via Panisperna si sciolse sia per mancanza di risorse all'interno dell'università sia per aver ideologie differenti rispetto al regime fascista. C'è chi è andato negli Stati Uniti per il progetto Manhattan, chi in Inghilterra. L'unico scienziato di cui non si hanno le tracce è Ettore Majorana. La sera del 25 marzo 1938, Ettore Majorana partì da Napoli alla volta di Palermo. Nei giorni seguenti Majorana inviò una lettere e un telegramma nei quali afferma in maniera abbastanza evidente di volersi togliere la vita, dopodiché non si ebbero più tracce. La scomparsa di Ettore Majorana venne tratta Leonardo Sciascia nel saggio «La scomparsa di Majorana». L'autore raccoglie le notizie frammentarie sul fatto, le dichiarazioni di persone vicine a Majorana rielaborandole in modo personale, affascinante e suggestiva, a tratti quasi romanzata, delineando in modo efficace la peculiare personalità del personaggio, giocando con il mito dell'intelligenza suprema e delle sue presunte capacità profetiche nonché con le sue contraddizioni.</p>
+                    <p>"Ragazzi di via Panispena" è il soprannome di un gruppo di giovani scienziati italiani, guidato da Enrico Fermi, che negli anni trenta del Novecento operò presso il Regio istituto di fisica dell'Università di Roma, allora ubicato in via Panisperna n. 90. La grandezza di questo gruppo sta nell'aver dato l'avvio per lo sviluppo scientifico dei reattori e delle bombe nucleari. Con l'inizio del periodo fascista e, in particolare, l'introduzione delle leggi razziali in Italia, il gruppo dei ragazzi di via Panisperna si sciolse sia per mancanza di risorse all'interno dell'università, sia per la diversa ideologia dei membri del gruppo rispetto al regime fascista. Alcuni andarono negli Stati Uniti per il progetto Manhattan, altri in Inghilterra. L'unico scienziato di cui si persero le tracce fu Ettore Majorana. La sua scomparsa venne tratta da Leonardo Sciascia nel saggio «La scomparsa di Majorana». L'autore raccolse qui le notizie frammentarie sul fatto e le dichiarazioni di persone vicine a Majorana, rielaborandole in maniera personale.</p>
                 </div>
             </div>
             <div class="materiaEC osservato fadeInW" style="flex-direction: row-reverse;">
                 <div class="titolo_materiaEC destra">
                     <p style="font-size: calc(10px + 0.8vw);">Arte</p>
-                    <p style="font-size: calc(12px + 2.5vw); font-weight: bold;">Logo NO bullismo<br>e cyberbullimo</p>
+                    <p style="font-size: calc(12px + 2.5vw); font-weight: bold;">Il Bauhaus</p>
                 </div>
                 <div style="flex: 1.5;">
-                    <p>Logo</p>
+                    <p>Il Bauhaus è una nuova e democratica scuola pubblica fondata da Walter Gropius negli anni Trenta, in cui gli allievi e i docenti studiano, vivono e lavorano insieme, condividendo esperienze e apprendendo. Questo approccio si basa su una concezione culturale pragmatica, incentrata sul confronto delle idee e sulla volontà di creare un'arte che sia soprattutto utile e in grado di comprendere e soddisfare i bisogni delle persone comuni. In breve tempo, il Bauhaus si trasforma in un movimento emblematico di una precisa etica, in cui l'arte diventa anche un mezzo per rispettare le persone. Si pone come un ostacolo al nazismo che agita la Germania di quegli anni, sia dal punto di vista sociale a causa del regime dittatoriale, sia dal punto di vista tecnologico.</p>
                 </div>
             </div>
             <div class="materiaEC osservato fadeInW">
@@ -84,10 +84,10 @@
             <div class="materiaEC osservato fadeInW" style="flex-direction: row-reverse;">
                 <div class="titolo_materiaEC destra">
                     <p style="font-size: calc(10px + 0.8vw);">Matematica e fisica</p>
-                    <p style="font-size: calc(12px + 2.5vw); font-weight: bold;">L'eutanasia in<br>Olanda e Belgio</p>
+                    <p style="font-size: calc(12px + 2.5vw); font-weight: bold;">L'eutanasia<br>in Olanda</p>
                 </div>
                 <div style="flex: 1.5;">
-                    <p>Grafici</p>
+                    <img src="Assets/images/EutanasiaOlandaEC.svg" width="80%">
                 </div>
             </div>
             <div class="materiaEC osservato fadeInW">
@@ -129,34 +129,47 @@
         </div>
     </section>
 
-    <section id="pcto_Page" style="background-color: #EDE8DD; padding: calc(45px + 1vw) 20px calc(45px + 1vw) 20px; color: #040405;">
-        <p class="osservato fadeInH" style="font-size: calc(13px + 3.5vw); font-weight: bold; text-align: center;">PCTO</p>
-        <p class="osservato fadeInH" style="font-size: calc(11px + 1.5vw); font-weight: bold; text-align: center; margin-bottom: calc(45px + 1vw);">percorsi per le competenze trasversali e l'orientamento</p>
-        
-        <div id="anniPCTO" style="display: grid; text-align: center; justify-content: center;">
-            <div class="annoPCTO osservato fadeInH">
-                <p style="font-size: calc(12px + 1.8vw); font-weight: bold;">Terzo anno</p>
-                <p>Economia e Marketing: concetti chiave per<br>il successo aziendale.</p>
+    <section id="pcto_Page" style="background-color: #EDE8DD; padding-top: calc(45px + 1vw); color: #040405;">
+        <p class="osservato fadeInH titoloSezione">PCTO</p>
+        <p class="osservato fadeInH sottotitoloSezione">percorsi per le competenze trasversali e l'orientamento</p>
+        <div style="background-image: url(Assets/images/SpiraleAurea.svg); padding-bottom: 10px;">
+            <div id="anniPCTO">
+                <div class="annoPCTO osservato fadeInH">
+                    <p style="font-size: calc(12px + 1.8vw); font-weight: bold;">Terzo anno</p>
+                    <p>Economia e Marketing: concetti chiave per<br>il successo aziendale.</p>
+                </div>
+                <div class="annoPCTO osservato fadeInH">
+                    <p style="font-size: calc(12px + 1.8vw); font-weight: bold;">Quarto anno</p>
+                    <p>Introduzione al mondo universitario:<br>orientamento e FAQ.</p>
+                </div>
+                <div class="annoPCTO osservato fadeInH">
+                    <p style="font-size: calc(12px + 1.8vw); font-weight: bold;">Quinto anno</p>
+                    <p>Etica delle nuove tecnologie: le intelligenze<br>artificiali e i deep fake.</p>
+                </div>
             </div>
-            <div class="annoPCTO osservato fadeInH">
-                <p style="font-size: calc(12px + 1.8vw); font-weight: bold;">Quarto anno</p>
-                <p>Introduzione al mondo universitario:<br>orientamento e FAQ.</p>
+            <div id="relazioneFinalePCTO">
+                <p class="osservato fadeInH" style="font-size: calc(12px + 1.8vw); font-weight: bold; text-align: center;">Relazione finale</p>
+                <p class="osservato fadeInH" style="margin-bottom: 2vh;">Il PCTO rappresenta un'evoluzione dei precedenti percorsi di alternanza scuola-lavoro e ha lo scopo di promuovere l'acquisizione di competenze trasversali, ovvero quelle abilità e conoscenze che vanno al di là delle materie tradizionali, ma che sono fondamentali per affrontare le sfide del mondo del lavoro e per la formazione di cittadini attivi e consapevoli.</p>
+                <p class="osservato fadeInH" style="margin-bottom: 2vh;">Per quanto a livello teorico il PCTO sia un'attività pressoché pratica, si è rivelata, nel mio caso, quasi completamente di matrice teorica. Numerosi sono stati gli argomenti trattati e alcuni hanno suscitato in maniera particolare il mio interesse: tra questi troviamo sicuramente il funzionamento di Google Ads, gli elementi trattati durante l'evento di divulgazione scientifica dell'Università Federico II, e il meccanismo di IA noto come "deep fake".</p>
+                <div class="argomentoPCTO osservato fadeInW" style="margin-bottom: 2vh;">
+                    <p style="font-size: calc(11px + 1.5vw); font-weight: bold;">Google Ads</p>
+                    <p>Google Ads è una piattaforma pubblicitaria online offerta da Google che consente alle aziende di promuovere i propri prodotti e servizi attraverso annunci pubblicitari su diversi canali digitali.<br>Per utilizzare Google Ads in ottica lavorativa, è necessario definire gli obiettivi pubblicitari, per esempio l'aumento delle vendite. Una volta creata la campagna, è importante monitorarne regolarmente le performance analizzando le metriche come il numero di clic, al fine di ottimizzare le strategie pubblicitarie. La piattaforma offre anche funzionalità avanzate come la segmentazione geografica, per raggiungere solo specifici luoghi geografici.<br>Google Ads è dunque uno strumento potente per la pubblicità online che consente alle aziende di raggiungere un vasto pubblico di potenziali clienti.</p>
+                </div>
+                <div class="argomentoPCTO osservato fadeInW" style="margin-bottom: 2vh;">
+                    <p style="font-size: calc(11px + 1.5vw); font-weight: bold;">Evento Università Federico II</p>
+                    <p>Oltre che per il solo fine divulgativo, l'iniziativa intrapresa dall'Università Federico II è stata utile a introdurci il mondo universitario, permettendoci di conoscere docenti e studenti. È anche da sottolineare il fatto che, in quanto unica iniziativa in presenza nell'arco dei primi due anni, è stata quella più coinvolgente.<br>La presentazione ha interessato principalmente il campo fisico e quello medico: notevole importanza è stata data alla spiegazione del funzionamento di alcune terapie contro il cancro, come la radioterapia. Al termine dell'attività ho avuto il piacere di parlare personalmente con uno dei professori, il quale mi ha amichevolmente dato qualche dritta sul percorso di studi che intraprenderò.</p>
+                </div>
+                <div class="argomentoPCTO osservato fadeInW">
+                    <p style="font-size: calc(11px + 1.5vw); font-weight: bold;">Deep fake</p>
+                    <p>Il deepfake è una tecnica per la sintesi dell'immagine umana basata sull'intelligenza artificiale, usata per combinare e sovrapporre immagini e video esistenti con altri. Questa tecnica è stata usata per creare fake news, bufale e truffe, per compiere atti di cyberbullismo o altri crimini informatici di varia natura. I deepfake stanno diventando sempre più diffusi e realistici grazie al continuo sviluppo delle IA. È quindi importante essere consapevoli di questo fenomeno e di come riconoscerlo per prevenire la disinformazione e gli attacchi hacker.</p>
+                </div>
             </div>
-            <div class="annoPCTO osservato fadeInH">
-                <p style="font-size: calc(12px + 1.8vw); font-weight: bold;">Quinto anno</p>
-                <p>Etica delle nuove tecnologie: le intelligenze<br>artificiali e i deep fake.</p>
-            </div>
-        </div>
-
-        <div id="relazioneFinalePCTO" style="margin-top: calc(45px + 1vw);">
-            <p class="osservato fadeInH" style="font-size: calc(12px + 1.8vw); font-weight: bold; text-align: center;">Relazione finale</p>
-            <p class="osservato fadeInH" style="font-weight: 500;">Questa è una relazione finale parole a caso la devo ancora finire bla bla test prova bla bla bla prova del test della prova nel test nella prova test prova prova test.</p>
         </div>
     </section>
 
-    <section id="materie_Page" style="height: 1000px; background-color: #040405; padding-top: calc(45px + 1vw);">
-        <p class="osservato fadeInH" style="font-size: calc(13px + 3.5vw); font-weight: bold; text-align: center; color: #EDE8DD;">L'innovazione</p>
-        <p class="osservato fadeInH" style="font-size: calc(11px + 1.5vw); font-weight: bold; text-align: center; margin-bottom: calc(45px + 1vw); color: #EDE8DD;">il tema ricorrente della storia umana</p> <!-- concetto al posto di tema? -->
+    <section id="materie_Page" style="height: 1000px; padding-top: calc(45px + 1vw);">
+        <p class="osservato fadeInH titoloSezione">Navigare nell'ignoto</p>
+        <p class="osservato fadeInH sottotitoloSezione">l'essere umano e la sua capacità di adattamento</p> <!-- concetto al posto di tema? -->
 
         
     </section>
