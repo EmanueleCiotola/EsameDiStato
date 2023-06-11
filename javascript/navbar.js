@@ -62,8 +62,7 @@ window.addEventListener("scroll", function(){
 // questa parte serve ad andare nella pagina voluta dopo aver cliccato sulla navbar
 function goTo(daAttivare) {    
     const targetSection = document.getElementById(daAttivare + "_Page");
-    document.documentElement.scrollTop = targetSection.offsetTop;
-    // window.scroll({
-    //     top: targetSection.offsetTop, 
-    // });
+    window.scroll({
+        top: targetSection.offsetTop, 
+    });
 }
