@@ -56,7 +56,6 @@ nav {
     -ms-user-select: none; /* IE, ms-edge */
     flex-direction: column;
     align-items: end;
-    pointer-events: none;
     background-color: #040405;
     position: relative;
     display: flex;
