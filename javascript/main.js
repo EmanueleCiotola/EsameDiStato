@@ -1,3 +1,15 @@
+// questa parte nasconde la navbar dei browser su mobile
+var element = document.documentElement;
+if (element.requestFullscreen) {
+    element.requestFullscreen();
+} else if (element.mozRequestFullScreen) {
+    element.mozRequestFullScreen();
+} else if (element.webkitRequestFullscreen) {
+    element.webkitRequestFullscreen();
+} else if (element.msRequestFullscreen) {
+    element.msRequestFullscreen();
+}
+
 // questa funzione serve a determinare se gli items osservati sono sullo schermo (utile per animazioni)
 var elementiDaOsservare = document.querySelectorAll('.osservato');
 var callback = function(items) {
