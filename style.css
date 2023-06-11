@@ -193,7 +193,7 @@ nav a.active::before { /* rende visibile striscia sotto link onHover */
 
 /* Educazione civica */
 .materiaEC {
-    margin-bottom: 10vh;
+    margin: 0 20px 10vh 20px;
     padding: calc(10px + 4vh) calc(10px + 4vw) calc(10px + 4vh) calc(10px + 4vw);
     background-color: rgb(32, 34, 37, 0.95);
     border-radius: 20px;
