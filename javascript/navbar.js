@@ -52,10 +52,11 @@ function scrolling() {
   // questa parte serve per aggiungere la modalità light alla scrollbar nelle sezioni a sfondo chiaro
   const sections = document.querySelectorAll("#home_Page, #fotoRicordi, #educazione_civica_Page, #pcto_Page, #materie_Page");
   sections.forEach((section, index) => {
-    if (window.pageYOffset >= section.offsetTop) {
+    if (window.pageYOffset >= section.offsetTop) { //TODO pcto_Page viene portata a 1px in meno al dovuto e quindi non si attiva light
       currentSectionIndex = index;
     }
   });
+  console.log(currentSectionIndex);
   navbar.classList.toggle("light", currentSectionIndex === 1 || currentSectionIndex === 3);
 }
 
