@@ -18,16 +18,12 @@ navbar.addEventListener("mouseout", function() {
     }, 1.5 * 1000);
 });
 
-// modifica navbar durante lo scroll
-window.addEventListener("scroll", scrolling);
-window.addEventListener("touchmove", scrolling);
-
-function scrolling(){
-    // questa parte serve a nascondere la navbar dopo un secondo e mezzo che non si scolla se non si è all'inizio della home
+// imposta un timer per nascondere la navbar dopo un secondo e mezzo che non si scolla se non si è all'inizio della home
+window.addEventListener("scroll", function(){
     clearTimeout(timer);
     navbar.style.top = "0px";
     if (!mouseOverNavbar) { // prima di nascondere la navbar dopo lo scroll controlla che il mouse non si trovi sopra di essa (evita bug non movimento mouse quando appare la navbar)
-        timer = setTimeout(function(){
+        timer = setTimeout(function() {
             if (window.pageYOffset != 0) {
                 navbar.style.top = - navbar.clientHeight + "px";
             }
@@ -61,12 +57,13 @@ function scrolling(){
             }
         };
     }
-};
+});
 
 // questa parte serve ad andare nella pagina voluta dopo aver cliccato sulla navbar
 function goTo(daAttivare) {    
     const targetSection = document.getElementById(daAttivare + "_Page");
-    window.scroll({
-        top: targetSection.offsetTop, 
-    });
+    document.documentElement.scrollTop = targetSection.offsetTop;
+    // window.scroll({
+    //     top: targetSection.offsetTop, 
+    // });
 }
