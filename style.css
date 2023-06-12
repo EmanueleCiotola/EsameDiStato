@@ -127,7 +127,7 @@ nav a.active::before { /* rende visibile striscia sotto link attivo */
 
 /* Prima Parte Homepage */
 #homeSection {
-    flex-grow: 1;
+    flex-grow: 1; /* per avere immagine della grandezza giusta */
     background-image: url(Assets/images/GraffitoViaDellaPace.svg);
     background-position: bottom right;
     background-repeat: no-repeat;
