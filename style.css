@@ -94,9 +94,22 @@ nav.light a.active {
     color: #040405 !important;
 }
 
+nav a.active::before { /* rende visibile striscia sotto link attivo */
+    content: "";
+    position: absolute;
+    background-color: #d52d08;
+    border-radius: 20px;
+    height: 3px;
+    width: 100%;
+    left: 0;
+    bottom: -5px;
+    transition: .3s ease;
+    pointer-events: none; /* evita bug che rende la striscia cliccabile */
+}
+
 @media (hover : hover) {
     nav a:hover::after { /* rende visibile striscia sotto link quando hover (dispositivi che lo permettono) */
-        Content: "";
+        content: "";
         position: absolute;
         background-color: #d52d08;
         border-radius: 20px;
@@ -107,19 +120,6 @@ nav.light a.active {
         transition: .3s ease;
         pointer-events: none; /* evita bug che rende la striscia cliccabile */
     }
-}
-
-nav a.active::before { /* rende visibile striscia sotto link attivo */
-    Content: "";
-    position: absolute;
-    background-color: #d52d08;
-    border-radius: 20px;
-    height: 3px;
-    width: 100%;
-    left: 0;
-    bottom: -5px;
-    transition: .3s ease;
-    pointer-events: none; /* evita bug che rende la striscia cliccabile */
 }
 /* Fine Stile Navbar */
 
