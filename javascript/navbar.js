@@ -5,6 +5,10 @@ let timer = null;
 let mouseOverNavbar = false;
 let isScrolling = false;
 
+if (!("ontouchstart" in window)) {
+  // Il dispositivo non supporta il touch, esegui il blocco di codice qui
+
+
 // questa parte serve a non nascondere la navbar se il cursore è sopra di essa
 navbar.addEventListener("mouseover", () => {
   mouseOverNavbar = true;
@@ -20,6 +24,8 @@ navbar.addEventListener("mouseout", () => {
     }
   }, 1500);
 });
+
+}
 
 // nascondi scrollbar un secondo e mezzo dopo scroll e modifica navbar
 function scrolling() {
