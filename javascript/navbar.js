@@ -5,26 +5,23 @@ let timer = null;
 let mouseOverNavbar = false;
 let isScrolling = false;
 
+// esegui un controllo posizione mouse solo su dispositivi non touch
 if (!("ontouchstart" in window)) {
-  // Il dispositivo non supporta il touch, esegui il blocco di codice qui
+  // questa parte serve a non nascondere la navbar se il cursore è sopra di essa
+  navbar.addEventListener("mouseover", () => {
+    mouseOverNavbar = true;
+    clearTimeout(timer);
+  });
 
-
-// questa parte serve a non nascondere la navbar se il cursore è sopra di essa
-navbar.addEventListener("mouseover", () => {
-  mouseOverNavbar = true;
-  clearTimeout(timer);
-});
-
-// imposta un timer per nascondere la navbar dopo un secondo e mezzo che non ci si trova su di essa
-navbar.addEventListener("mouseout", () => {
-  mouseOverNavbar = false;
-  timer = setTimeout(() => {
-    if (window.pageYOffset != 0) {
-      navbar.style.top = -navbar.clientHeight + "px";
-    }
-  }, 1500);
-});
-
+  // imposta un timer per nascondere la navbar dopo un secondo e mezzo che non ci si trova su di essa
+  navbar.addEventListener("mouseout", () => {
+    mouseOverNavbar = false;
+    timer = setTimeout(() => {
+      if (window.pageYOffset != 0) {
+        navbar.style.top = -navbar.clientHeight + "px";
+      }
+    }, 1500);
+  });
 }
 
 // nascondi scrollbar un secondo e mezzo dopo scroll e modifica navbar
@@ -62,7 +59,6 @@ function scrolling() {
       currentSectionIndex = index;
     }
   });
-  console.log(currentSectionIndex);
   navbar.classList.toggle("light", currentSectionIndex === 1 || currentSectionIndex === 3);
 }
 
