@@ -14,7 +14,3 @@ var observer = new IntersectionObserver(callback, {threshold: 0.3});
 elementiDaOsservare.forEach((element) => {
     observer.observe(element);
 });
-
-
-
-//TODO il colore della navbar fa casino

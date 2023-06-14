@@ -78,7 +78,13 @@ window.addEventListener("touchmove", handleScroll);
 // questa parte serve ad andare alla pagina voluta dopo aver cliccato sulla navbar
 function goTo(daAttivare) {
   const targetSection = document.getElementById(daAttivare + "_Page");
-  window.scroll({
-    top: targetSection.offsetTop,
-  });
+  if (targetSection.id == "home_Page") { // evita bug scorrimento 1px in meno causato dal padding non fisso nelle section
+    window.scroll({
+      top: targetSection.offsetTop,
+    });
+  } else {
+    window.scroll({
+      top: targetSection.offsetTop + 1,
+    });
+  }
 }
