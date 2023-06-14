@@ -80,6 +80,10 @@ nav a {
     font-size: calc(10px + 0.8vw);
     background-color: transparent;
     -webkit-tap-highlight-color: transparent; /* evita effetto pressione link */
+    user-select: none; /* rende testo non selezionabile */
+    -moz-user-select: none; /* firefox */
+    -webkit-user-select: none; /* Chrome, Opera and Safari*/
+    -ms-user-select: none; /* IE, ms-edge */
 }
 
 nav.light a {
