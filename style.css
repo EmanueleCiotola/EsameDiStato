@@ -49,7 +49,6 @@ nav {
     -moz-user-select: none; /* firefox */
     -webkit-user-select: none; /* Chrome, Opera and Safari*/
     -ms-user-select: none; /* IE, ms-edge */
-    pointer-events: none;
     flex-direction: column;
     align-items: end;
     background-color: #040405;
@@ -81,7 +80,6 @@ nav a {
     font-size: calc(10px + 0.8vw);
     background-color: transparent;
     -webkit-tap-highlight-color: transparent; /* evita effetto pressione link */
-    pointer-events: auto;
 }
 
 nav.light a {
@@ -205,7 +203,7 @@ nav a.active::before { /* rende visibile striscia sotto link attivo */
 
 /* Educazione civica */
 .materiaEC {
-    margin-bottom: 10vh;
+    margin-bottom: calc(45px + 2vw);
     padding: calc(10px + 4vh) calc(10px + 4vw) calc(10px + 4vh) calc(10px + 4vw);
     background-color: rgb(32, 34, 37, 0.95);
     border-radius: 20px;
@@ -248,7 +246,7 @@ nav a.active::before { /* rende visibile striscia sotto link attivo */
 }
 
 #relazioneFinalePCTO {
-    margin: calc(45px + 1vw) 20px 10vh 20px;
+    margin: calc(45px + 1vw) 20px calc(45px + 2vw) 20px;
     font-weight: 500;
     padding: calc(10px + 2vh) calc(10px + 2vw) calc(10px + 2vh) calc(10px + 2vw);
     background: rgba(237, 232, 221, 0.15);
