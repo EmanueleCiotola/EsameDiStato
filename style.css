@@ -49,6 +49,7 @@ nav {
     -moz-user-select: none; /* firefox */
     -webkit-user-select: none; /* Chrome, Opera and Safari*/
     -ms-user-select: none; /* IE, ms-edge */
+    -webkit-touch-callout: none;
     flex-direction: column;
     align-items: end;
     background-color: #040405;
