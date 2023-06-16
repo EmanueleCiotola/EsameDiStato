@@ -8,11 +8,6 @@ let timer = null;
 let mouseOverNavbar = false;
 let isScrolling = false;
 
-function textSelection (event) {
-  event.preventDefault();
-  console.log("kdgjk");
-}
-
 // non nascondere navbar durante tocco o mousehover
 function preventHiding() {
   mouseOverNavbar = true;
@@ -80,7 +75,7 @@ if (!("ontouchstart" in window)) {
   navbar.addEventListener("mouseout", hideNavbar);
 } else {
   // questa parte serve a non nascondere la navbar se si sta toccando (su dispositivi touch)
-  navbar.addEventListener("touchstart", preventHiding, textSelection(event));
+  navbar.addEventListener("touchstart", preventHiding);
 
   // imposta un timer per nascondere la navbar dopo un secondo e mezzo che non si sta toccando (su dispositivi touch)
   navbar.addEventListener("touchend", hideNavbar);
