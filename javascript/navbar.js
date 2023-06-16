@@ -1,7 +1,7 @@
 const navbar = document.getElementById("menu");
-const navSections = document.querySelectorAll("#home_Page, #educazione_civica_Page, #pcto_Page, #materie_Page");
+const navSections = document.querySelectorAll("#home_Page, #educazione_civica_Page, #pcto_Page");
 const navLinks = document.querySelectorAll("#home, #educazione_civica, #pcto, #materie");
-const sections = document.querySelectorAll("#home_Page, #fotoRicordi, #educazione_civica_Page, #pcto_Page, #materie_Page");
+const sections = document.querySelectorAll("#home_Page, #fotoRicordi, #educazione_civica_Page, #pcto_Page");
 let currentNavSectionIndex = 0;
 let currentSectionIndex = 0;
 let timer = null;
