@@ -69,29 +69,27 @@ function handleScroll() {
 // esegui un controlli diversi su dispositivi touch e non touc
 if (!("ontouchstart" in window)) {
   // questa parte serve a non nascondere la navbar se il cursore è sopra di essa
-  navbar.addEventListener("mouseover", preventHiding, { passive: true });
+  navbar.addEventListener("mouseover", preventHiding);
 
   // imposta un timer per nascondere la navbar dopo un secondo e mezzo che non ci si trova su di essa
-  navbar.addEventListener("mouseout", hideNavbar, { passive: true });
+  navbar.addEventListener("mouseout", hideNavbar);
 } else {
   // questa parte serve a non nascondere la navbar se si sta toccando (su dispositivi touch)
   navbar.addEventListener("touchstart", preventHiding, { passive: true });
 
   // imposta un timer per nascondere la navbar dopo un secondo e mezzo che non si sta toccando (su dispositivi touch)
-  navbar.addEventListener("touchend", hideNavbar, { passive: true });
+  navbar.addEventListener("touchend", hideNavbar);
 }
-
-// evita bug selezione e deselezione del testo con click sulla navbar
-navbar.addEventListener("click", function(event) {
-  // Impedisci la propagazione dell'evento click
-  console.log("kfjk");
-  event.preventDefault();
-  window.getSelection()?.removeAllRanges();
-});
 
 // esegui controlli per richiamare funzione di scroll
 window.addEventListener("scroll", handleScroll);
 window.addEventListener("touchmove", handleScroll);
+
+// evita bug selezione e deselezione del testo con click sulla navbar
+navbar.addEventListener("click", function(event) {
+  event.preventDefault();
+  window.getSelection()?.collapseToEnd(); // se del testo è selezionato deselezionalo
+});
 
 // questa parte serve ad andare alla pagina voluta dopo aver cliccato sulla navbar
 function goTo(daAttivare) {
