@@ -9,10 +9,9 @@ let mouseOverNavbar = false;
 let isScrolling = false;
 
 // non nascondere navbar durante tocco o mousehover
-function preventHiding(event) {
+function preventHiding() {
   mouseOverNavbar = true;
   clearTimeout(timer);
-  event.preventDefault();
 }
 
 // nascondi navbar un secondo e mezzo dopo tocco o mouseout
@@ -76,18 +75,19 @@ if (!("ontouchstart" in window)) {
   navbar.addEventListener("mouseout", hideNavbar, { passive: true });
 } else {
   // questa parte serve a non nascondere la navbar se si sta toccando (su dispositivi touch)
-  navbar.addEventListener("touchstart", preventHiding(event), { passive: true });
+  navbar.addEventListener("touchstart", preventHiding, { passive: true });
 
   // imposta un timer per nascondere la navbar dopo un secondo e mezzo che non si sta toccando (su dispositivi touch)
   navbar.addEventListener("touchend", hideNavbar, { passive: true });
 }
 
 // evita bug selezione e deselezione del testo con click sulla navbar
-// navbar.addEventListener("click", function(event) {
-//   // Impedisci la propagazione dell'evento click
-//   console.log("kfjk");
-//   event.preventDefault();
-// });
+navbar.addEventListener("click", function(event) {
+  // Impedisci la propagazione dell'evento click
+  console.log("kfjk");
+  event.preventDefault();
+  window.getSelection()?.removeAllRanges();
+});
 
 // esegui controlli per richiamare funzione di scroll
 window.addEventListener("scroll", handleScroll);
