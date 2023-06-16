@@ -22,6 +22,12 @@ if (!("ontouchstart" in window)) {
       }
     }, 1500);
   });
+} else {
+  navbar.addEventListener("touchend", () => {
+    console.log("kdgnkds");
+    mouseOverNavbar = true;
+    clearTimeout(timer);
+  });
 }
 
 // nascondi scrollbar un secondo e mezzo dopo scroll e modifica navbar
