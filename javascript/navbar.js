@@ -1,36 +1,30 @@
 const navbar = document.getElementById("menu");
+const navSections = document.querySelectorAll("#home_Page, #educazione_civica_Page, #pcto_Page, #materie_Page");
+const navLinks = document.querySelectorAll("#home, #educazione_civica, #pcto, #materie");
+const sections = document.querySelectorAll("#home_Page, #fotoRicordi, #educazione_civica_Page, #pcto_Page, #materie_Page");
 let currentNavSectionIndex = 0;
 let currentSectionIndex = 0;
 let timer = null;
 let mouseOverNavbar = false;
 let isScrolling = false;
 
-// esegui un controllo posizione mouse solo su dispositivi non touch
-if (!("ontouchstart" in window)) {
-  // questa parte serve a non nascondere la navbar se il cursore è sopra di essa
-  navbar.addEventListener("mouseover", () => {
-    mouseOverNavbar = true;
-    clearTimeout(timer);
-  });
-
-  // imposta un timer per nascondere la navbar dopo un secondo e mezzo che non ci si trova su di essa
-  navbar.addEventListener("mouseout", () => {
-    mouseOverNavbar = false;
-    timer = setTimeout(() => {
-      if (window.pageYOffset != 0) {
-        navbar.style.top = -navbar.clientHeight + "px";
-      }
-    }, 1500);
-  });
-} else {
-  navbar.addEventListener("touchend", () => {
-    console.log("kdgnkds");
-    mouseOverNavbar = true;
-    clearTimeout(timer);
-  });
+// non nascondere navbar durante tocco o mousehover
+function preventHiding() {
+  mouseOverNavbar = true;
+  clearTimeout(timer);
 }
 
-// nascondi scrollbar un secondo e mezzo dopo scroll e modifica navbar
+// nascondi navbar un secondo e mezzo dopo tocco o mouseout
+function hideNavbar() {
+  mouseOverNavbar = false;
+  timer = setTimeout(() => {
+    if (window.pageYOffset != 0) {
+      navbar.style.top = -navbar.clientHeight + "px";
+    }
+  }, 1500);
+}
+
+// nascondi navbar un secondo e mezzo dopo scroll e modifica navbar
 function scrolling() {
   clearTimeout(timer);
   navbar.style.top = "0px";
@@ -43,23 +37,16 @@ function scrolling() {
   }
   
   // questa parte serve ad attivare e disattivare i link nella navbar durante lo scroll (sia scroll automatico sia manuale)
-  const navSections = document.querySelectorAll("#home_Page, #educazione_civica_Page, #pcto_Page, #materie_Page");
-  const navLinks = document.querySelectorAll("#home, #educazione_civica, #pcto, #materie");
   navSections.forEach((section, index) => {
     if (window.pageYOffset + (document.body.scrollHeight * 0.02) >= section.offsetTop) { // il "+ (document.body.scrollHeight * 0.02)" serve a dare un po' di tolleranza
       currentNavSectionIndex = index;
     }
   });
   navLinks.forEach((link, index) => {
-    if (index === currentNavSectionIndex) {
-      link.classList.add("active");
-    } else {
-      link.classList.remove("active");
-    }
+    link.classList.toggle("active", index === currentNavSectionIndex);
   });
 
-  // questa parte serve per aggiungere la modalità light alla scrollbar nelle sezioni a sfondo chiaro
-  const sections = document.querySelectorAll("#home_Page, #fotoRicordi, #educazione_civica_Page, #pcto_Page, #materie_Page");
+  // questa parte serve per aggiungere la modalità light alla navbar nelle sezioni a sfondo chiaro
   sections.forEach((section, index) => {
     if (window.pageYOffset >= section.offsetTop) { //TODO pcto_Page viene portata a 1px in meno al dovuto e quindi non si attiva light
       currentSectionIndex = index;
@@ -78,6 +65,23 @@ function handleScroll() {
     });
   }
 }
+
+// esegui un controlli diversi su dispositivi touch e non touc
+if (!("ontouchstart" in window)) {
+  // questa parte serve a non nascondere la navbar se il cursore è sopra di essa
+  navbar.addEventListener("mouseover", preventHiding);
+
+  // imposta un timer per nascondere la navbar dopo un secondo e mezzo che non ci si trova su di essa
+  navbar.addEventListener("mouseout", hideNavbar);
+} else {
+  // questa parte serve a non nascondere la navbar se si sta toccando (su dispositivi touch)
+  navbar.addEventListener("touchstart", preventHiding);
+
+  // imposta un timer per nascondere la navbar dopo un secondo e mezzo che non si sta toccando (su dispositivi touch)
+  navbar.addEventListener("touchend", hideNavbar);
+}
+
+// esegui controlli per richiamare funzione di scroll
 window.addEventListener("scroll", handleScroll);
 window.addEventListener("touchmove", handleScroll);
 

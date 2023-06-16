@@ -14,6 +14,3 @@ var observer = new IntersectionObserver(callback, {threshold: 0.3});
 elementiDaOsservare.forEach((element) => {
     observer.observe(element);
 });
-
-
-//TODO rimpostare timer per non far salire scrollbar su dispositivi touch dopo la pressione
