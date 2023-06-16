@@ -69,17 +69,23 @@ function handleScroll() {
 // esegui un controlli diversi su dispositivi touch e non touc
 if (!("ontouchstart" in window)) {
   // questa parte serve a non nascondere la navbar se il cursore è sopra di essa
-  navbar.addEventListener("mouseover", preventHiding);
+  navbar.addEventListener("mouseover", preventHiding, { passive: true });
 
   // imposta un timer per nascondere la navbar dopo un secondo e mezzo che non ci si trova su di essa
-  navbar.addEventListener("mouseout", hideNavbar);
+  navbar.addEventListener("mouseout", hideNavbar, { passive: true });
 } else {
   // questa parte serve a non nascondere la navbar se si sta toccando (su dispositivi touch)
-  navbar.addEventListener("touchstart", preventHiding);
+  navbar.addEventListener("touchstart", preventHiding, { passive: true });
 
   // imposta un timer per nascondere la navbar dopo un secondo e mezzo che non si sta toccando (su dispositivi touch)
-  navbar.addEventListener("touchend", hideNavbar);
+  navbar.addEventListener("touchend", hideNavbar, { passive: true });
 }
+
+navbar.addEventListener("click", function(event) {
+  // Impedisci la propagazione dell'evento click
+  console.log("kfjk");
+  event.stopPropagation();
+});
 
 // esegui controlli per richiamare funzione di scroll
 window.addEventListener("scroll", handleScroll);
