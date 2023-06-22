@@ -17,6 +17,7 @@ body {
     background-color: #040405;
     color: #FEFEFE;
     font-family: "myFont";
+    height: 100%
 }
 
 
@@ -126,8 +127,8 @@ nav a.active::before { /* rende visibile striscia sotto link attivo */
 
 /* Prima Parte Homepage */
 #homeSection {
-    flex-grow: 1; /* per avere immagine della grandezza giusta */
     background-image: url(Assets/images/GraffitoViaDellaPace.svg);
+    flex-grow: 1; /* per avere immagine della grandezza giusta */
     background-position: bottom right;
     background-repeat: no-repeat;
     padding-left: 20px;
