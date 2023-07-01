@@ -17,6 +17,7 @@ body {
     background-color: #040405;
     color: #FEFEFE;
     font-family: "myFont";
+    font-display: swap; /* Appena carica il mio font passa subito a quello */
 }
 
 
